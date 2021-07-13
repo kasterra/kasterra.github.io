@@ -5,6 +5,7 @@ katex: True
 layout: post
 excerpt: 큰 수의 이항계수를 효율적으로 구하는 법
 image: /images/thumbnails/이항계수.png
+category: MATH
 ---
 # 0. 도입
 우선 이 글은 [영어 원글](https://fishi.devtail.io/weblog/2015/06/25/computing-large-binomial-coefficients-modulo-prime-non-prime/)을 번역해서 약간의 재구성을 거친 것임을 밝힙니다. 

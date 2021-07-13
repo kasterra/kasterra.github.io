@@ -2,7 +2,8 @@
 layout: post
 title: 60프레임 collapsible 만들기
 excerpt: 프론트 엔드 최적화를 위해 transition 사용하기
-tag: Frontend
+category: FRONTEND
+image: /images/thumbnails/CSSJS.png
 ---
 # 시작하며
 지금 블로그에 있는 한 시리즈들을 묶어서 보여주는 시리즈 기능은, 기능 자체는 잘 작동하나, 심미적 관점에서 별로인건 사실인것 같습니다. 그래서, [Bulma](https://bulma.io/)에서 제공하는 여러 컴포넌트 중에서 [Card](https://bulma.io/documentation/components/card/)기능을 활용해서, 헤더 부분을 클릭하면 목록이 펼쳐지고, 다시 클릭하면 접혀지는, 흔히 `collapsible`이라고 불리는걸 만들어서, 애니메이션을 적용할까 했습니다.

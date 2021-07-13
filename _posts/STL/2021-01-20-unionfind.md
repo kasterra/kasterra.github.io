@@ -1,10 +1,11 @@
 ---
 title: 명예 STL - Union find 구현하기
-tags:  Union-find 자료구조 구현
+tags:  Union-find
 katex: True
 layout: post
 excerpt: 상호 배타적 집합을 어떻게 구현할 수 있을까?
 image: /images/thumbnails/unionfind.png
+category: DATA STRUCTURE
 ---
 # 개요
 C++의 STL은 꽤나 많은 자료구조와 알고리즘들을 구현해 놓았다. `std::list`라던가, `std::stack` 등등.... 하지만, 내장되어 있지 않은 자료구조와 알고리즘도 상당히 많다는 사실을 부정할 수는 없기 때문에, 블로그 포스팅을 통해서, 반드시 알아둬야 할 문제풀이에 상당히 유용히 쓰이는 알고리즘들을 **명예 STL** 이라고 내 맘대로 이름 붙여서 이제 관리해볼려고 한다.

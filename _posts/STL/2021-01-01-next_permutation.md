@@ -1,10 +1,10 @@
 ---
 title: C++ STL next_permutation의 구현
-tags:  STL 구현
 katex: True
 layout: post
 excerpt: 수열을 만들어내는 함수 next_permutation을 직접 구현 해보자!
 image: /images/thumbnails/next_permutation.png
+category: STL
 ---
 # next_permutaion이 뭔데?
 특정한 수열의 가능한 배열 중에 입력으로 들어온 수열을 사전순(lexicographic)으로 마지막이 될 때까지 순회를 시켜서 마지막이면 false 를 리턴하고 사전순으로 가장 처음인 순서대로 주어진 수열을 만들어 놓는다. 

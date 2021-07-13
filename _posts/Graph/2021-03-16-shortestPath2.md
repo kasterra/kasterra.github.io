@@ -5,6 +5,7 @@ katex: True
 layout: post
 excerpt: 음수간선이 있는 그래프의 최단경로를 계산하는 벨만-포드 알고리즘의 원리와 구현
 image: /images/thumbnails/gpath2.png
+category: DATA STRUCTURE
 ---
 # 음수간선이 있을땐 벨만-포드
 위에서 소개한 다익스트라 알고리즘의 한계는, 음수간선이 있을 때, 사용이 불가능 하다는 것이었고, 특히 음수 가중치를 가진 사이클이 나왔을 때, 정상적인 작동을 보장하지 못한다는 것입니다.

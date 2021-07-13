@@ -2,6 +2,8 @@
 layout: post
 title: 테마 의존적 기능 모듈화
 excerpt: 블로그 이사를 위한 이사짐
+category: BLOG
+image: /images/thumbnails/jekyll.png
 ---
 # 이 생각을 하게 된 계기
 [7월 4일날 쓴 짧은 글](https://kasterra.github.io/2021/07/04/personal.html)을 읽으면 알겠지만, 2주동안 열심히 jekyll을 만졌지만, 이것보다 훨배는 더 예쁜 테마에다가 그냥 _posts 폴더만 이사해서 돌려보고 얻은 충격이 이만저만이 아니라, 여러 생각들을 했습니다.

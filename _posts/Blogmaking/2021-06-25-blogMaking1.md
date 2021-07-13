@@ -6,6 +6,7 @@ layout: post
 excerpt: 기초의 기초 프론트엔드 지식만 가지고 있는 상태에서, Jekyll 블로그를 운영하기 위한 기초 지식을 더 얹어 봅시다.
 image: /images/thumbnails/blogmove1.png
 series: 블로그 만들기
+category: BLOG
 ---
 
 # 시작하기 앞서
