@@ -1,7 +1,6 @@
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Kasterra's Archive
+title: Kasterra's Archive | A Tech Blog
+description: 풀 스택이 되고자 하는 학생의 꾸준하고 싶은 기록입니다.
 tags:
   - blog
   - template
@@ -18,7 +17,7 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
+email: kasterra@naver.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting

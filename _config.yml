@@ -1,8 +1,7 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Kasterra's Archive
+title: Kasterra's Archive | A Tech Blog
+description: 풀 스택이 되고자 하는 학생의 꾸준하고 싶은 기록입니다.
 tags:
   - blog
   - template
@@ -19,7 +18,7 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
+email: kasterra@naver.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting
@@ -61,7 +60,7 @@ collections:
   authors:
     output: true
 paginate_path: "/page/:num/"
-show_get_theme_btn: true
+show_get_theme_btn: false
 use_logo: false
 
 # Content paginator
@@ -106,3 +105,46 @@ exclude: [
 
 # Theme
 version: v3.1.1
+
+# Translation
+translations:
+  text:
+    new_post: "New Post"
+    see_also: "관련 게시글"
+    search: "Search"
+    author: "Author"
+    share: "Share"
+    comments: "댓글"
+  button:
+    read_now: "Read Now"
+    share_on_twitter: "Share on Twitter"
+    share_on_facebook: "Share on Facebook"
+  pagination:
+    page: "Page"
+    of: "of"
+    next_page: "Next Page"
+    next_post: "Previous Page"
+  recommendation:
+    text: "Why don't you read something next?"
+    back_btn: "최상단으로 돌아가기"
+  error_404:
+    title: "404 :("
+    message: "죄송합니다. 찾으시는 페이지가 존재하지 않습니다"
+    image_alt: "404 - Page not found"
+  contact:
+    title: "Talk to me"
+    subject: "New contact!"
+    submit_btn: "전송"
+    placeholders:
+      name: "Your name"
+      email: "Your e-mail"
+      message: "Your message"
+    errors:
+      locale: "kr"
+      empty_name: "Name을 입력 바랍니다"
+      empty_email: "Email을 입력 바랍니다"
+      invalid_email: "Email이 유효하지 않습니다"
+      empty_message: "Message를 입력 바랍니다"
+    after_send:
+      title: "Message sent!"
+      message: "Thank you for sending me a message. I'm going to answer ASAP."

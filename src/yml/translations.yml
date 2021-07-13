@@ -1,0 +1,41 @@
+translations:
+  text:
+    new_post: "New Post"
+    see_also: "관련 게시글"
+    search: "Search"
+    author: "Author"
+    share: "Share"
+    comments: "댓글"
+  button:
+    read_now: "Read Now"
+    share_on_twitter: "Share on Twitter"
+    share_on_facebook: "Share on Facebook"
+  pagination:
+    page: "Page"
+    of: "of"
+    next_page: "Next Page"
+    next_post: "Previous Page"
+  recommendation:
+    text: "Why don't you read something next?"
+    back_btn: "최상단으로 돌아가기"
+  error_404:
+    title: "404 :("
+    message: "죄송합니다. 찾으시는 페이지가 존재하지 않습니다"
+    image_alt: "404 - Page not found"
+  contact:
+    title: "Talk to me"
+    subject: "New contact!"
+    submit_btn: "전송"
+    placeholders:
+      name: "Your name"
+      email: "Your e-mail"
+      message: "Your message"
+    errors:
+      locale: "kr"
+      empty_name: "Name을 입력 바랍니다"
+      empty_email: "Email을 입력 바랍니다"
+      invalid_email: "Email이 유효하지 않습니다"
+      empty_message: "Message를 입력 바랍니다"
+    after_send:
+      title: "Message sent!"
+      message: "Thank you for sending me a message. I'm going to answer ASAP."
