@@ -6,7 +6,7 @@ layout: post
 excerpt: 밋밋한 블로그 화면을 화사하게 꾸며봅시다.
 image: /images/thumbnails/blogmove3.png
 series: 블로그 만들기
-category: BLOG
+category: blog
 ---
 
 # 이번 포스트의 목표

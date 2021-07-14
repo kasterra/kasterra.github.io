@@ -2,7 +2,7 @@
 layout: post
 title: 테마 의존적 기능 모듈화
 excerpt: 블로그 이사를 위한 이사짐
-category: BLOG
+category: blog
 image: /images/thumbnails/jekyll.png
 ---
 # 이 생각을 하게 된 계기

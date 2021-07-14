@@ -6,7 +6,7 @@ layout: post
 excerpt: TeXt의 기본 테마의 포스팅 화면에서 아쉬운점을 개선해봅시다.
 image: /images/thumbnails/blogmove2.png
 series: 블로그 만들기
-category: BLOG
+category: blog
 ---
 
 # 이번 포스트의 목표

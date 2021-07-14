@@ -2,7 +2,7 @@
 layout: post
 title: 60프레임 collapsible 만들기
 excerpt: 프론트 엔드 최적화를 위해 transition 사용하기
-category: FRONTEND
+category: frontend
 image: /images/thumbnails/CSSJS.png
 ---
 # 시작하며

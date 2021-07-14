@@ -6,7 +6,7 @@ layout: post
 excerpt: 저는 왜 블로그를 옮겼고, TeXt라는 테마를 골랐을까요? 블로그 제작기의 첫걸음 입니다.
 image: /images/thumbnails/blogmove0.png
 series: 블로그 만들기
-category: BLOG
+category: blog
 ---
 # 저의 블로그의 역사
 ## 블로그를 해보자! 근데 뭘 해야하지?

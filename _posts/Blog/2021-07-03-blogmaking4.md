@@ -7,7 +7,7 @@ excerpt: 사용 블로그와 견줄수 있는 기능들을 만들어 넣어봅�
 image: /images/thumbnails/blogmove4.png
 series: 블로그 만들기
 comment: true
-category: BLOG
+category: blog
 ---
 # 이번 포스트의 목표
 

@@ -5,7 +5,7 @@ katex: True
 layout: post
 excerpt: 그래프의 최단경로를 구하는 일반적인 알고리즘들 BFS 그리고 다익스트라 알고리즘
 image: /images/thumbnails/gpath1.png
-category: DATA STRUCTURE
+category: data structure
 ---
 
 # 개요
