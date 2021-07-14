@@ -1,0 +1,81 @@
+{%- if page.series -%}
+    {% assign count = '0' %}
+    {% assign idx = '0' %}
+    {% for post in site.posts reversed %}
+        {% if post.series == page.series %}
+            {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+            {% if post.url == page.url %}
+                {% capture idx %}{{count}}{% endcapture %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    <style>
+.panel {
+  margin: 20px 0px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  overflow:hidden;
+}
+.panel--active{
+  opacity:1;
+}
+
+.seriesNote{
+  transform-origin: top left;
+  will-change:transform;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+}
+.seriesNote-content{
+  transform-origin: top left;
+  will-change:transform;
+  animation-duration: 200ms;
+  animation-timing-function: linear;
+  padding:0px 15px;
+}
+.panel h4, .panel h5, .panel h6, .panel i{
+  margin: 0.2rem 0rem;
+  padding:0;
+}
+.panel h4, .panel h5{
+  display: inline;
+}
+.panel-heading {
+  padding: 10px 15px;
+  position:relative;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.panel ul{
+    margin:1em;
+}
+        
+    </style>
+
+    <div class="panel seriesNote">
+        <div class="panel-heading" style="position:relative;">
+            <h4>이 포스트는 <strong>"{{page.series}}"</strong> 시리즈의 <strong>{{idx}}</strong>번째 포스트 입니다.</h4>
+        </div>
+        <ul>
+            {% assign count = '0' %}
+            {% for post in site.posts reversed %}
+            {% if post.series == page.series %}
+                {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+                <li>
+                {% if page.url == post.url %}
+                    <h5>{{post.title}}</h5>
+                {% else %}
+                    <h5><a href="{{post.url}}">{{post.title}}</a></h5>
+                {% endif %}
+                <h6>{{post.excerpt}}</h6>
+                </li>
+            {% endif %}
+            {% endfor %}
+            </ul>
+    </div>    
+{%- endif -%}
