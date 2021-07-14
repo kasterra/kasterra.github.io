@@ -29,11 +29,7 @@ formspree_form_id: formspree_form_id
 # Social Media Settings
 # Remove the item if you don't need it
 github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
+linkedin_username: 휘찬-이-952825212
 
 
 # Posts Settings
@@ -112,7 +108,7 @@ translations:
     new_post: "New Post"
     see_also: "관련 게시글"
     search: "Search"
-    author: "Author"
+    author: "작성자"
     share: "Share"
     comments: "댓글"
   button:
@@ -125,7 +121,7 @@ translations:
     next_page: "Next Page"
     next_post: "Previous Page"
   recommendation:
-    text: "Why don't you read something next?"
+    text: "다른 포스트도 읽어보실래요?"
     back_btn: "최상단으로 돌아가기"
   error_404:
     title: "404 :("
