@@ -3,7 +3,7 @@ title: 그래프 최단경로 ①:BFS,다익스트라 알고리즘
 tags: BFS 그래프 다익스트라
 katex: True
 layout: post
-excerpt: 그래프의 최단경로를 구하는 일반적인 알고리즘들 BFS 그리고 다익스트라 알고리즘
+subtitle: 그래프의 최단경로를 구하는 일반적인 알고리즘들 BFS 그리고 다익스트라 알고리즘
 image: /images/thumbnails/gpath1.png
 category: data structure
 ---

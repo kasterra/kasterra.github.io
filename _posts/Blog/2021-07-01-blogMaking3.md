@@ -3,7 +3,7 @@ title: 블로그 옮기기 ③:본격 블로그 메인화면 꾸미기
 tags: 기타환경 블로그 Jekyll TeXt
 katex: True
 layout: post
-excerpt: 밋밋한 블로그 화면을 화사하게 꾸며봅시다.
+subtitle: 밋밋한 블로그 화면을 화사하게 꾸며봅시다.
 image: /images/thumbnails/blogmove3.png
 series: 블로그 만들기
 category: blog
@@ -119,8 +119,8 @@ layout: home
 layout: home
 mode: immersive
 article_header:
-  type: overlay
-  theme: dark
+    type: overlay
+    theme: dark
 background_color: "#7cc7bb"
 show_title: true
 title: 카스테라의 공부방
@@ -133,11 +133,11 @@ excerpt: 이 블로그는 알고리즘, PS, 웹개발 이야기를 다룹니다
 
 ```css
 .overlay {
-  min-height: auto !important;
-  height: 18rem !important;
+    min-height: auto !important;
+    height: 18rem !important;
 }
 h1 {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 ```
 
@@ -193,30 +193,37 @@ content of layout part 1 content of the page content of layout part 1
 
 수정된 **article-list.html** 일부분
 {%-raw-%}
+
 ```html
-{%- if _article.cover and include.show_cover and include.show_cover != 'thumbnail'-%}
-          {%- include snippets/get-nav-url.html path=_article.cover -%}
-          {%- assign _article_cover = __return -%}
-          <div class="item__image">
-          {%- if include.cover_size == 'lg' -%}
-            <img class="image image--lg" src="{{ _article_cover }}" />
-          {%- elsif include.cover_size == 'sm' -%}
-            <img class="image image--sm" src="{{ _article_cover }}" />
-          {%- else -%}
-            <img class="image" src="{{ _article_cover }}" />
-          {%- endif -%}
-          </div>
-        {%- endif -%}
-        <div class="item__content">
-          <header>
-            <a href="{{ _article_url }}">
+{%- if _article.cover and include.show_cover and include.show_cover !=
+'thumbnail'-%} {%- include snippets/get-nav-url.html path=_article.cover -%} {%-
+assign _article_cover = __return -%}
+<div class="item__image">
+    {%- if include.cover_size == 'lg' -%}
+    <img class="image image--lg" src="{{ _article_cover }}" />
+    {%- elsif include.cover_size == 'sm' -%}
+    <img class="image image--sm" src="{{ _article_cover }}" />
+    {%- else -%}
+    <img class="image" src="{{ _article_cover }}" />
+    {%- endif -%}
+</div>
+{%- endif -%}
+<div class="item__content">
+    <header>
+        <a href="{{ _article_url }}">
             {%- if include.show_cover =='thumbnail' and _article.cover -%}
-              <div class="item__image thumbnail"><img src="{{ _article_cover }}" alt="cover of artilce"></div>
+            <div class="item__image thumbnail">
+                <img src="{{ _article_cover }}" alt="cover of artilce" />
+            </div>
             {%- endif -%}
-              <h2 itemprop="headline" class="item__header">{{ _article.title }}</h2>
-            </a>
-          </header>
+            <h2 itemprop="headline" class="item__header">
+                {{ _article.title }}
+            </h2>
+        </a>
+    </header>
+</div>
 ```
+
 {%endraw%}
 
 이제 `item__image thumbnail`에 해당하는 CSS요소를 꾸며줍시다. `item`과 `image`둘다 각각의 CSS 파일이 있는데, 저는 `item.scss`에 css 요소를 더 추가하는 쪽으로 가겠습니다.
@@ -253,6 +260,7 @@ content of layout part 1 content of the page content of layout part 1
 성공했습니다.
 
 우리의 성공을 자축하는 마음으로, 진행률 체크리스트도 갱신해 봅시다.
+
 <hr>
 <h3>현재 진행상황</h3>
 - [x] Github 블로그 첫걸음
@@ -283,57 +291,65 @@ content of layout part 1 content of the page content of layout part 1
 드디어 절반에 도달했습니다.
 
 # 블로그에 개성 불어넣기
+
 웹 사이트의 개성을 들어내는 데에는 웹사이트의 기능이나, 디자인도 중요하게 작용하지만, 웹사이트의 로고도 정말 중요하게 작용한다고 생각합니다. 넷플릭스, 구글, 네이버 등등 우리가 많이 쓰는 서비스들의 로고는 우리의 뇌리에 강하게 각인되어 있습니다. 우리의 블로그가 그정도 브랜드파워를 가지기 소원하는 마음에서, 로고를 만들고 이를 방문자들이 볼 수 있게 해봅시다.
+
 ## 로고 만들기
+
 이 글 서두에 잠깐 언급했듯, 저는 디자인을 잘하는 사람은 아닙니다. 그래서 이 블로그 로고를 디자인 하는데는 저보다 더 디자인 센스가 좋은 사람들이 만들어놓은 서비스를 활용했습니다.
 [freelogodesign](https://www.freelogodesign.org/)이라는 서비스를 활용했습니다. 다양한 레이아웃 주제를 제공해서, 본인의 취향껏 고를 수 있는점이 참 마음에 들었습니다.
+
 <div style="display:flex; justify-content:center"><img src="/images/blogmaking/freelogo.png"></div>
 
-무료 플랜으로는 200px * 200px 의 이미지밖에 사용을 못하지만, 페이지를 간단히 장식할 목적으로는 충분하다고 생각합니다.
+무료 플랜으로는 200px \* 200px 의 이미지밖에 사용을 못하지만, 페이지를 간단히 장식할 목적으로는 충분하다고 생각합니다.
 
 <div style="display:flex; justify-content:center"><img src="/images/blogmaking/kaslogo.png"/></div>
 저는 이런 로고를 만들었습니다. 상당히 마음에 드는군요. 블로그 각자 입맛에 맞도록 로고를 만들면 될 것 같습니다.
 
 ## 파비콘으로 가공하고 적용하기
+
 [TeXt 공식 문서](https://tianqi.name/jekyll-TeXt-theme/docs/en/logo-and-favicon)에서 로고와 파비콘에 대한 설명이 있어, 이 설명대로 따라가겠습니다.
 파비콘으로 만들 이미지 파일을 제출하는데, 개인적인 조언이라면, 손톱만큼의 크기로 보이는것이 파비콘 이기에, 많은 요소를 넣지 않는것이 좋습니다. 제 경우에는, kasterra 라는 글씨를 뺴고, 행성 그림만 나오게 하여 제출해서 사용하였습니다.
 
 아이콘을 패키지를 다운받고, 이를 적절한 곳에 블로그에 배치해 줍시다.
 `browserconfig.xml`과 `site.webmanifest`또한 교체하여 주고, 페이지에서 나온 html 코드는 `_includes/head/favicon.html`에 교체해서 넣어줍시다.
 
-이렇게 바꾸어 놔도, 블로그에 처음 들어왔을때 로고 부분은 은행나뭇잎 그대로일 것입니다. 이건 `_includes/logo.svg`를 교체해서 넣으면 됩니다. 
+이렇게 바꾸어 놔도, 블로그에 처음 들어왔을때 로고 부분은 은행나뭇잎 그대로일 것입니다. 이건 `_includes/logo.svg`를 교체해서 넣으면 됩니다.
 
 그렇게 바꿔놓고 들어와보니, 또 문제가 보입니다.
+
 <div style="display:flex; justify-content:center"><img src="/images/blogmaking/demo6.png"/></div>
 
 로고가 너무 작게 보인다는 것인데, 이 문제는 ` /_sass/component/header.scss`의 67,68번째 줄을 고치는 것으로 해결합니다.
 
 ```scss
 .header__brand {
-  @include flexbox();
-  @include align-items(center);
-  & > svg {
-    width: map-get($base, font-size-h4) * 3;
-    height: map-get($base, font-size-h4) * 3;
-    margin-right: map-get($spacers, 3);
-    vertical-align: middle;
-    @include media-breakpoint-down(md) {
-      width: map-get($base, font-size-h4) * 1.2;
-      height: map-get($base, font-size-h4) * 1.2;
+    @include flexbox();
+    @include align-items(center);
+    & > svg {
+        width: map-get($base, font-size-h4) * 3;
+        height: map-get($base, font-size-h4) * 3;
+        margin-right: map-get($spacers, 3);
+        vertical-align: middle;
+        @include media-breakpoint-down(md) {
+            width: map-get($base, font-size-h4) * 1.2;
+            height: map-get($base, font-size-h4) * 1.2;
+        }
     }
-  }
-  & > a {
-    display: inline-block;
-    font-size: map-get($base, font-size-h4);
-    @include media-breakpoint-down(md) {
-      font-size: map-get($base, font-size-h4-small);
+    & > a {
+        display: inline-block;
+        font-size: map-get($base, font-size-h4);
+        @include media-breakpoint-down(md) {
+            font-size: map-get($base, font-size-h4-small);
+        }
     }
-  }
 }
 ```
+
 <div style="display:flex; justify-content:center"><img src="/images/blogmaking/demo7.png"/></div>
 
 이제 문제가 모두 해결된것 같습니다.
+
 <hr>
 <h3>현재 진행상황</h3>
 - [x] Github 블로그 첫걸음
@@ -363,10 +379,10 @@ content of layout part 1 content of the page content of layout part 1
 <hr>
 
 # 요약
-이번 시간에는 블로그에 우리의 개성을 불어넣는 작업을 해봤습니다. 여태까지의 블로그 글은 이전 `velog`에서 쓴 것이거나, 임시로 땜빵한 블로그에서 썼던 것인데, 이제 지금 우리가 github pages로 서비스 하는 블로그에서 작업을 할 수 있을만큼 블로그가 화사해 졌습니다. 
+
+이번 시간에는 블로그에 우리의 개성을 불어넣는 작업을 해봤습니다. 여태까지의 블로그 글은 이전 `velog`에서 쓴 것이거나, 임시로 땜빵한 블로그에서 썼던 것인데, 이제 지금 우리가 github pages로 서비스 하는 블로그에서 작업을 할 수 있을만큼 블로그가 화사해 졌습니다.
 
 <h3>현재 블로그 상태</h3>
 ![블로그 상태](/images/blogmaking/frontpageComplete.png)
 
 기존 TeXt 기본 상태보다 훨씬 화사하고 보기 좋은것 같습니다.
-

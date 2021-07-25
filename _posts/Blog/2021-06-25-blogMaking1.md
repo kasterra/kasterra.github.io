@@ -3,7 +3,7 @@ title: 블로그 옮기기 ①:첫걸음 Jekyll 기초
 tags: 기타환경 블로그 Jekyll TeXt
 katex: True
 layout: post
-excerpt: 기초의 기초 프론트엔드 지식만 가지고 있는 상태에서, Jekyll 블로그를 운영하기 위한 기초 지식을 더 얹어 봅시다.
+subtitle: 기초의 기초 프론트엔드 지식만 가지고 있는 상태에서, Jekyll 블로그를 운영하기 위한 기초 지식을 더 얹어 봅시다.
 image: /images/thumbnails/blogmove1.png
 series: 블로그 만들기
 category: blog

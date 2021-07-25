@@ -2,7 +2,7 @@
 title: Jekyll이란 무엇이며 어떻게 동작하는가
 tags: Jekyll
 layout: post
-excerpt: github.io 블로그를 만들때 쓰는 Jekyll. 정확히 어떻게 돌아가는지 알아봅시다.
+subtitle: github.io 블로그를 만들때 쓰는 Jekyll. 정확히 어떻게 돌아가는지 알아봅시다.
 image: /images/thumbnails/jekyll.png
 category: blog
 gists: True
@@ -213,6 +213,7 @@ _drafts/how-jekyll-works.md               |     1 |    8.20K | 0.000
 ```
 
 # 마치며
+
 이번 포스팅에서는 아무 생각 없이 사용했을 수도 있는 jekyll이 실제로 어떻게 돌아가는지 알아보았습니다. Jekyll의 표어중 하나였던 No magic 이라는 말 대로, 어떻게 jekyll이 돌아가는지 정도를 알아볼 수 있었습니다.
 
 나중에 기회가 된다면 Jekyll 뿐만 아니라, 다른 경쟁 정적 사이트들과 jekyll의 비교를 하는 포스팅도 작성해볼까 합니다.

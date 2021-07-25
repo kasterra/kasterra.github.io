@@ -1,7 +1,7 @@
 ---
 title: 사지방에서 개인 개발 공간을! VPS로 code-server 서버 구축기
 layout: post
-excerpt: 우리들의 친구 vscode를 언제 어디서나 쓸 수 있게 해봅시다.
+subtitle: 우리들의 친구 vscode를 언제 어디서나 쓸 수 있게 해봅시다.
 image: /images/thumbnails/vultrVscode.png
 category: environment
 ---
