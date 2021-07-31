@@ -11,9 +11,6 @@ tags: node.js express POST
 
 express.js로 간단한 공부들을 해보면서, 대략적으로 express로 간단한 CRUD 서비스를 만드는 법은 배웠지만, 제대로 express.js를 알고 있다고 하기에는 수준이 많이 부족하고, 언젠가 공모전 등의 실제 개발을 하게 될 때, 도움이 되기를 바라면서, express.js 공식 문서를 보면서 번역을 하며, 몰랐던것을 새롭게 정리한 글입니다. 1대 1 번역은 아닙니다. 원본은 필요한 부분만 클릭해서 볼 수 있는 형태였다면, 이 포스트는 제가 공부한걸 제가 보기에 적합한 형태로 바꾼 것이라서요.
 
-GET으로 보낸것은 req.query로 받는다.
-POST로 보낸것은 express.urlencoded()로 미들웨어 처리를 해주면, req.body로 읽을 수 있다.
-
 # express()
 
 express.js로 서버를 구성할떄,
