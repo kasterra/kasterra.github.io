@@ -1,6 +1,6 @@
 ---
 layout: author
-photo: /images/logo.png
+photo: /images/logo_transparent_background.png
 name: kasterra
 display_name: kasterra
 position: 블로그 주인장
