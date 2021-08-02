@@ -10,14 +10,16 @@ tags:
     - netlify
 show_hero: true
 menu:
-    - title: Home
-      url: /
     - title: About
       url: /about
+    - title: Tags
+      url: /tags
     - title: Contact
       url: /contact
     - title: Feed
       url: /feed.xml
+    - title: My BOJ page
+      url: https://www.acmicpc.net/user/hc19991003
 email: kasterra@naver.com
 # See: https://disqus.com/
 disqus_username: disqus_username
