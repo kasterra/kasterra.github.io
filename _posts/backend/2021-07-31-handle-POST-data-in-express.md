@@ -67,7 +67,7 @@ http request body에 담겨저 오는 payload의 종류는 여러가지가 있�
         </tr>
         <tr>
             <td><code class="language-plaintext highlighter-rouge">type</code></td>
-            <td>미들웨어가 어떤 타일을 처리할 것인지를 지정해 줍니다. 문자열, 문자열의 배열, 함수 중 하나로 사용합니다.<br> 함수가 아니면, <a href="(https://www.npmjs.org/package/type-is">type-is 라이브러리</a>를 통해서, 확장자 명인지(예시 : .bin) MIME 타입명인지(예시 : text/plain), 와일드카드를 사용한 MIME 파일 명인지, (예시 : text / \*)를 확인해서 반영합니다.<br>함수라면 <code class="language-plaintext highlighter-rouge">type</code> 옵션은 <code class="language-plaintext highlighter-rouge">fn(req)</code>로 호출되어, 참으로 해석될 수 있는 값(truthy value)이 반환되면 파싱 됩니다.</td>
+            <td>미들웨어가 어떤 타일을 처리할 것인지를 지정해 줍니다. 문자열, 문자열의 배열, 함수 중 하나로 사용합니다.<br> 함수가 아니면, <a href="(https://www.npmjs.org/package/type-is">type-is 라이브러리</a>를 통해서, 확장자 명인지(예시 : .bin) MIME 타입명인지(예시 : text/plain), 와일드카드를 사용한 MIME 파일 명인지, (예시 : text / *)를 확인해서 반영합니다.<br>함수라면 <code class="language-plaintext highlighter-rouge">type</code> 옵션은 <code class="language-plaintext highlighter-rouge">fn(req)</code>로 호출되어, 참으로 해석될 수 있는 값(truthy value)이 반환되면 파싱 됩니다.</td>
             <td>Mixed(문자열, 문자열 배열, 함수)</td>
             <td>각 메소드 별로 상이</td>
         </tr>
@@ -251,6 +251,7 @@ app.post("/", function (request, response) {
 </table>
 
 ### express.raw([options])
+
 이 메소드는 body를 `Buffer`로 보고 파싱하고, request내의 `Content-type`과 해당 메소드의 `type`옵션이 일치하는 request 만을 처리하는 **미들웨어를 반환**합니다. 모든 형태의 유니코드 인코딩을 받아드리며, `gzip`이나 `deflate`인코딩으로 압축된 내용들을 알아서 압축 해제 합니다.
 
 미들웨어로 처리되고 난 다음의 새로운 `body` 객체 내에는 `request` 객체 내에서 파싱 된 데이터들이 들어있을 것입니다. 만약에 파싱할 데이터가 없거나, `Content-type`이 일치하지 않거나 에러가 난다면 `body`객체는 빈 객체가 될 것입니다.
@@ -282,6 +283,7 @@ RFC 2046에서 명시된 바로는 `application/octet-steam`은 임의의 2진 �
 </table>
 
 # 마치며
+
 HTML `<form>`에서 POST 메소드로 정보를 송신할때, 정보를 처리하기 위해서 사용한다고 알고만 있었던 express의 body-parser 기반 미들웨어(정확히는 미들웨어를 생성하는 메소드)에 대해서 알아보았습니다. 아직 개발 짬이 부족한지라, 이러한 것들이 어떠한 가치를 가지는지는 100% 이해하지 못하지만, 향후에 HTTP POST 통신을 쓰면서 도움이 되지 않을까 하는 마음에 한번 정리 해 보았습니다.
 
-끝까지 글 읽어주셔서 감사합니다. 
+끝까지 글 읽어주셔서 감사합니다.
