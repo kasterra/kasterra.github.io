@@ -28,6 +28,7 @@
   will-change:transform;
   animation-duration: 200ms;
   animation-timing-function: linear;
+  border-bottom: 1px solid #ddd;
 }
 .seriesNote-content{
   transform-origin: top left;
@@ -72,7 +73,7 @@
                 {% else %}
                     <h5><a href="{{post.url}}">{{post.title}}</a></h5>
                 {% endif %}
-                <h6>{{post.excerpt}}</h6>
+                    <h6>{{post.subtitle}}</h6>
                 </li>
             {% endif %}
             {% endfor %}
