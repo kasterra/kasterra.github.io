@@ -217,6 +217,4 @@ console.log(`match[1] : ${match[1]}`)
 
 [다양한 언어로 배우는 정규표현식 최신 엔진 구현과 이론적 배경을 배우다(신야 료마 , 스즈키 유스케 , 타카타 켄 지음)](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791185890456)
 
-<https://stackoverflow.com/questions/42179046/what-flavor-of-regex-does-visual-studio-code-use> : vscode에 관한 부분을 적을 때 참고한 stackoverflow 글
-
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges> : 자바스크립트 코드 작성 시 참고했던 mdn 페이지
