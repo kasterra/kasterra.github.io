@@ -1,7 +1,7 @@
 ---
 title: 문자열 처리의 해결사. 정규표현식을 알아보자 ③
 layout: post
-subtitle: 정규표현식을 활용해서 문자열을 조작하는 방법들을 알아봅시다.
+subtitle: 정규표현식에서 문자열 조작을 다뤄주는 캡처에 대해서 알아봅시다.
 image: /images/thumbnails/regex.png
 category: environment
 series: 정규식

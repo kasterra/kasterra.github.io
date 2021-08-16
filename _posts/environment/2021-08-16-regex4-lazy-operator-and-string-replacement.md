@@ -1,7 +1,7 @@
 ---
 title: 문자열 처리의 해결사. 정규표현식을 알아보자 ④
 layout: post
-subtitle: 게으른 수량자인 겸허 수량자를 이용해, 캡쳐를 다루는 방법을 알아 봅시다.
+subtitle: 게으른 수량자인 겸허 수량자를 이용해, 캡쳐를 다루는 방법과 문자열 치환에 대해서 알아봅시다.
 image: /images/thumbnails/regex.png
 category: environment
 series: 정규식
