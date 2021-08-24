@@ -1,7 +1,7 @@
 ---
 title: CSS Flex 정리글
 layout: post
-subtitle: 웹 페이지 레이우웃을 편리하게 해주는 flexbox를 정리해 봅시다.
+subtitle: 웹 페이지 레이아웃을 편리하게 해주는 flexbox를 정리해 봅시다.
 image: /images/thumbnails/CSSHTML.png
 category: frontend
 ---
