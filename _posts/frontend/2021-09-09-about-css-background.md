@@ -38,7 +38,7 @@ HTML(또는 pug)과 CSS(또는 scss)만으로 클론 코딩 연습을 하다가,
 
 <i class="fas fa-exclamation-triangle"></i> 주의 : `background-color` 에서는 여러 색을 쓸 수 없습니다!<br>
 혹시 색을 반반 쪼개서 넣는 등의 그런 효과들을 원한다면 후에 설명할 `background-image`부분을 참고 바랍니다.
-{:info}
+{:.info}
 
 ## `<color>` 자료형
 
@@ -83,7 +83,7 @@ CSS에서 사용하는 단색을 나타내는 자료형 입니다. 사용 가능
 
 <i class="fas fa-question-circle"></i> `background-size`값에 콤마를 넣으면 안되는 이유?<br>
 `background-color`를 제외한 배경 속성에서는, 배경을 여러개 넣을 수 있습니다. 배경 이미지를 여러개 넣었을 때, 각각의 크기를 명시하기 위해서, 콤마로 구분을 해서 사용합니다.
-{:info}
+{:.info}
 
 ## 배경의 시작점 지정 `background-origin`
 
@@ -135,7 +135,7 @@ content의 배경에는 body에 그려진 그림과 동일한 그림에, 이미�
 ![body](https://meyerweb.com/eric/css/edge/complexspiral/shell-bg.jpg)
 
 <div style="display:flex; justify-content:center;">body에 적용된 배경 이미지 파일</div>
-![content](https://meyerweb.com/eric/css/edge/complexspiral/shell-bg.jpg)
+![content](https://meyerweb.com/eric/css/edge/complexspiral/shell-blue.jpg)
 <div style="display:flex; justify-content:center">content에 적용된 배경 이미지. 이미지의 배경색 빼고 같은 이미지다.</div>
 ```css
 body {background: black url(shell-bg.jpg) 0 0 no-repeat fixed;}
