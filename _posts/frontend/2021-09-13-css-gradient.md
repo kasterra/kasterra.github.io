@@ -1,5 +1,5 @@
 ---
-title: CSS gradient와 background 속성 최종 정리
+title: CSS gradient 정리
 layout: post
 subtitle: 분량문제 때문에 다루지 못한 gradient와 지름길 속성 background에 대해서 정리를 해봅니다.
 image: /images/thumbnails/CSS.png
