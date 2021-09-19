@@ -27,7 +27,7 @@ npm으로 패키지를 관리하는 프로젝트에서 `package.json`이 있으�
 sudo apt-get install build-essential
 ```
 
-jekyll 공식 홈페이지에서 나온 [요구사항](https://jekyllrb.com/docs/installation/)충족을 위한 준비물 설치
+jekyll 공식 홈페이지에서 나온 [요구사항](https://jekyllrb.com/docs/installation/) 충족을 위한 준비물 설치
 
 ```bash
 sudo apt install ruby-dev make gcc
