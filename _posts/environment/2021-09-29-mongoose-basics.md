@@ -3,14 +3,14 @@ title: Mongoose 기초 정리
 layout: post
 subtitle: node.js에서 MongoDB를 쓸 때 도움을 주는 친구인 Mongoose에 대하여
 image: /images/thumbnails/mongoose.png
-category: environemnt
+category: environment
 ---
 
 # 개요
 
-몇달전부터 저는 제대로 된 주니어 풀스택이 되기 위해서, 프론트엔드/백엔드 공부를 모두 하고 있습니다. 주니어 풀스택 이라면, CRUD 서비스를 스스로의 힘으로 구현해야 한다는 말을 어디서 주워 들었기 떄문에, mongoDB를 깔아서, [제대로 안되는 이슈도 극복](/mongodb-error-when-just-installed/) 해보고 여러 겅험을 해봤습니다.
+몇달전부터 저는 제대로 된 주니어 풀 스택이 되기 위해서, 프론트엔드/백엔드 공부를 모두 하고 있습니다. 주니어 풀 스택 이라면, CRUD 서비스를 스스로의 힘으로 구현해야 한다는 말을 어디서 주워들었기 떄문에, mongoDB를 깔아서, [제대로 안되는 이슈도 극복](/mongodb-error-when-just-installed/) 해보고 여러 겅험을 해봤습니다.
 
-이번 글에서는 실제 제 node.js 백엔드에서 mongoDB를 연결시켜주는 mongoose에 다루어 볼까 합니다.
+이번 글에서는 실제 제 node.js 백엔드에서 mongoDB를 연결해주는 mongoose에 다루어 볼까 합니다.
 
 # 0. mongoose란?
 
