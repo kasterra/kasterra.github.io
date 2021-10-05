@@ -4,6 +4,7 @@ layout: post
 subtitle: css에서 2차원 레이아웃을 담당하는 grid에 대해서 알아봅시다.
 image: /images/thumbnails/CSSHTML.png
 category: frontend
+series: css Grid
 ---
 
 # 들어가며 : CSS Grid가 쓰이는 이유
