@@ -1,3 +1,5 @@
 # robotstxt.org/
 
 User-agent: *
+
+#DaumWebMasterTool:35ce4525c8b78514aeab548de45ec2c301179f18ab5a45703dd3d8177fd8680d:htwPlEie0kpp400LuZSpDg==
