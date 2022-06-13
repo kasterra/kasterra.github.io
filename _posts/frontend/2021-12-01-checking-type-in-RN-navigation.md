@@ -3,7 +3,7 @@ title: React Navigation에서 TypeScript 사용하기
 layout: post
 subtitle: 우리에게 뭐든 타입을 지정하게 강제하는 TS에서 잘 살아남아 봅시다
 image: /images/frontend/react-ts.png
-category: frontend
+category: react
 ---
 
 # 개인적인 이야기

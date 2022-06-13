@@ -2,7 +2,7 @@
 layout: post
 title: 리액트에 쓰이는 가상 DOM이 뭔가요?
 subtitle: DOM, document fragment, Virtual DOM, React fragment, shadow DOM 까지
-category: frontend
+category: react
 image: /images/thumbnails/React.png
 ---
 
