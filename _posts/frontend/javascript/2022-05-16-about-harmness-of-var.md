@@ -2,7 +2,7 @@
 layout: post
 title: var의 유해성에 대해서
 subtitle: 호이스팅, 변수 스코프에 관해서 이야기를 해봅시다.
-category: frontend
+category: javascript
 image: /images/thumbnails/JS.png
 ---
 

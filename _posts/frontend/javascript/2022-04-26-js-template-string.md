@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript Template String의 모든것
 subtitle: 단순히 문자열에 변수 넣는걸로 끝이 아니에요
-category: Frontend
+category: javascript
 image: /images/thumbnails/JS.png
 ---
 
