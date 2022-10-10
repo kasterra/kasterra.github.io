@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 부스트캠프 웹모바일 7기 회고
+title: 부스트캠프 웹모바일 7기 챌린지 회고
 subtitle: 한달동안의 땀흘리는 여정. 뒤돌아봅시다.
 category: short essay
 image: /images/thumbnails/boostcamp.png
