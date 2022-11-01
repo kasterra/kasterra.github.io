@@ -1,6 +1,6 @@
 ---
 layout: post
-title: VanilaJS의 Middleware. Proxy ①
+title: VanilaJS의 Middleware. Proxy
 subtitle: expressJS에서 쓰이는 middleware. 바닐라JS에도 비슷한게 있다는걸 아셨나요? Observable을 위한 빌드업...
 category: javascript
 image: /images/thumbnails/JS.png
