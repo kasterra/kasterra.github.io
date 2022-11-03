@@ -35,3 +35,10 @@ image: /images/personal/boostConference.jpg
 # 실제 발표 현장
 
 사진 자료는 [제 인스타그램](https://www.instagram.com/p/Cj9NiaZBITH/)에 첨부해 놨습니다. 정말 재밌었어요. 제가 부스트캠프 슬랙에 워낙 어그로를 많이 끌어서 그런지, 저는 잘 모르는 분인데, '휘찬님 너무 반가워요' 하면서 악수를 청하기도 하고 해서 연예인이 된거 같은 산뜻한 기분으로 재밌게 발표도 했습니다. 또 1784 내부에 뽈뽈 거리는 로봇 친구들과 사내 식당에 있는 냉모밀소바세트 돈까스는 정말 맛있었습니다 히히... 참 재밌었고, 만약 다음에도 이런 일정이 생긴다면 꼭 가보고 싶습니다! 너무 재밌었어요~~
+
+그래도 발표사진 몇개는 남겨두면 좋을것 같아서 몇개 올려놓습니다.(11/3 추가)
+
+[![img-317.jpg](https://i.postimg.cc/J4JFt4fr/img-317.jpg)](https://postimg.cc/6yWcmw6g)
+[![img-342.jpg](https://i.postimg.cc/J0RsJhpf/img-342.jpg)](https://postimg.cc/zbPDYqZ7)
+[![img-321.jpg](https://i.postimg.cc/QMPgpc7R/img-321.jpg)](https://postimg.cc/ns4Qxj0k)
+[![img-332.jpg](https://i.postimg.cc/PxYDY9Tw/img-332.jpg)](https://postimg.cc/YG2jwX4r)
