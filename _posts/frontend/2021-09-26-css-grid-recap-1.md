@@ -2,7 +2,7 @@
 title: CSS Grid 정리글 - ①
 layout: post
 subtitle: css에서 2차원 레이아웃을 담당하는 grid에 대해서 알아봅시다.
-image: /images/thumbnails/CSSHTML.png
+image: /images/thumbnails/CSS.png
 category: frontend
 series: css Grid
 ---

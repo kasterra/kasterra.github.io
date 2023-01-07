@@ -2,7 +2,7 @@
 title: CSS Flex 정리글
 layout: post
 subtitle: 웹 페이지 레이아웃을 편리하게 해주는 flexbox를 정리해 봅시다.
-image: /images/thumbnails/CSSHTML.png
+image: /images/thumbnails/CSS.png
 category: frontend
 ---
 
@@ -69,18 +69,18 @@ Flexbox를 이해하려면 꼭 제대로 알아야 하는 내용입니다. 메�
 
 justify-content는 flexbox container에서 아이템들이 메인축 방향으로 늘어설 때의 배치를 어떻게 할지 명시하는 부분입니다. 주로 사용하는 속성을 알아보겠습니다.
 
--   **flex-start**
-    -   기본값 입니다. flex-direction의 시작부분부터 차례 차례 배열됩니다.
--   flex-end
-    -   flex-start의 반대 개념으로 flex-direction의 끝부분부터 차례 차례 배열됩니다.
--   center
-    -   가운데 정렬입니다. 아이템들이 메인축을 기준으로 가운데에 옹기종기 모일 것입니다.
--   space-between
-    -   아이템들의 사이(between)에 균일한 간격을 넣어서 정렬합니다.
--   space-around
-    -   아이템들의 둘레(around)에 균일한 간격을 넣어서 정렬합니다.
--   space-evenly
-    -   아이템들의 양 끝에 완전히 동일한(evenly)간격으로 정렬합니다. <i class="fab fa-internet-explorer"></i> <i class="fab fa-edge-legacy"></i>👎(<i class="fab fa-edge"></i>는 크로미움 엔진이라 가능 👍)
+- **flex-start**
+  - 기본값 입니다. flex-direction의 시작부분부터 차례 차례 배열됩니다.
+- flex-end
+  - flex-start의 반대 개념으로 flex-direction의 끝부분부터 차례 차례 배열됩니다.
+- center
+  - 가운데 정렬입니다. 아이템들이 메인축을 기준으로 가운데에 옹기종기 모일 것입니다.
+- space-between
+  - 아이템들의 사이(between)에 균일한 간격을 넣어서 정렬합니다.
+- space-around
+  - 아이템들의 둘레(around)에 균일한 간격을 넣어서 정렬합니다.
+- space-evenly
+  - 아이템들의 양 끝에 완전히 동일한(evenly)간격으로 정렬합니다. <i class="fab fa-internet-explorer"></i> <i class="fab fa-edge-legacy"></i>👎(<i class="fab fa-edge"></i>는 크로미움 엔진이라 가능 👍)
 
 이 속성은 여러분이 보시는 이 블로그에서 참 많이 쓰이고 있습니다. 가운데 정렬을 위한 HTML 태그 `<center>`는 작동은 하지만, 비표준이라서, 사용을 자제해야 합니다. 대체 할 수 있는 코드로 저는 `<div style="display:flex; justify-content:center;"></div>`를 절찬리에 사용하고 있습니다.
 
@@ -99,16 +99,16 @@ space-between은 아이템 사이의 공간을 동일하게 설정합니다. 반
 
 이 역시 주로 사용하는 속성에 대해서 알아보겠습니다.
 
--   **stretch**
-    -   기본값 입니다. 아이템들이 컨테이너의 수직방향으로 쭉 늘어납니다.
--   flex-start
-    -   아이템들을 교차축의 시작점으로 정렬합니다.
--   flex-end
-    -   flex-start와 반대로, 아이템들을 교차축의 끝점으로 정렬합니다.
--   center
-    -   교차축을 기준으로 가운데 정렬입니다. 메인축이 row 라면, 세로 가운데 정렬인 식이죠.
--   baseline
-    -   아이템들을 텍스트 베이스라인을 기준으로 정렬합니다.
+- **stretch**
+  - 기본값 입니다. 아이템들이 컨테이너의 수직방향으로 쭉 늘어납니다.
+- flex-start
+  - 아이템들을 교차축의 시작점으로 정렬합니다.
+- flex-end
+  - flex-start와 반대로, 아이템들을 교차축의 끝점으로 정렬합니다.
+- center
+  - 교차축을 기준으로 가운데 정렬입니다. 메인축이 row 라면, 세로 가운데 정렬인 식이죠.
+- baseline
+  - 아이템들을 텍스트 베이스라인을 기준으로 정렬합니다.
 
 ![베이스라인](https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Typography_Line_Terms.svg/1920px-Typography_Line_Terms.svg.png)
 
@@ -122,24 +122,24 @@ flexbox 콘테이너에 아이템들을 넣을 때, 공간이 부족하면 어�
 
 해당 현상을 제어하려면, flex 컨테이너 내에서, `flex-wrap`이라는 속성을 지정해주면 됩니다.
 
--   nowrap
-    -   기본값 입니다. 아이템을 어떻게든 한줄로 정렬시킵니다. 줄일수 있으면 줄이고, 안되면 뭐 삐져나오는거죠. 여기에 대한 자세한 얘기는 flex-shrink에서 다루겠습니다.
--   wrap
-    -   개행이 필요할 것 같으면 개행을 실시합니다. 마지막에 있는 아이템이 밑 행으로 내려갑니다.
--   wrap-reverse
-    -   개행을 하되, wrap과는 반대(reverse)입니다. 들어가지 못했던 마지막에 있던 아이템이 윗 행으로 올라갑니다.
+- nowrap
+  - 기본값 입니다. 아이템을 어떻게든 한줄로 정렬시킵니다. 줄일수 있으면 줄이고, 안되면 뭐 삐져나오는거죠. 여기에 대한 자세한 얘기는 flex-shrink에서 다루겠습니다.
+- wrap
+  - 개행이 필요할 것 같으면 개행을 실시합니다. 마지막에 있는 아이템이 밑 행으로 내려갑니다.
+- wrap-reverse
+  - 개행을 하되, wrap과는 반대(reverse)입니다. 들어가지 못했던 마지막에 있던 아이템이 윗 행으로 올라갑니다.
 
 ## 여러 줄이 생겼을때, 그 줄들을 정렬하는 방법 : align-content
 
 wrap이 발생하면, 여러 줄이 생깁니다. 그 줄들을 어떻게 정렬할것인가에 대한 전략을 여기에서 결정합니다. 사용 가능한 속성은 아래와 같습니다.
 
--   stretch
--   flex-start
--   flex-end
--   center
--   space-between
--   space-around
--   space-evenly <i class="fab fa-internet-explorer"></i> <i class="fab fa-edge-legacy"></i>👎(<i class="fab fa-edge"></i>는 크로미움 엔진이라 가능 👍)
+- stretch
+- flex-start
+- flex-end
+- center
+- space-between
+- space-around
+- space-evenly <i class="fab fa-internet-explorer"></i> <i class="fab fa-edge-legacy"></i>👎(<i class="fab fa-edge"></i>는 크로미움 엔진이라 가능 👍)
 
 # Flexbox 자식들에게 직접 지정하는 요소들
 

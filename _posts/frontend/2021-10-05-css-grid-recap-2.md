@@ -2,7 +2,7 @@
 title: CSS Grid 정리글 - ②
 layout: post
 subtitle: grid layout에 아이템들을 배치해 봅시다
-image: /images/thumbnails/CSSHTML.png
+image: /images/thumbnails/CSS.png
 category: frontend
 series: css Grid
 ---
