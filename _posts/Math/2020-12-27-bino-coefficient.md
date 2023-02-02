@@ -543,7 +543,7 @@ if __name__ == '__main__':
 
 ```
 
-<i class="fas fa-info-circle"></i> <strong>정보</strong><br>
+<i class="fas fa-info-circle"></i> <strong>정보</strong><br/>
 뤼카의 정리는 우리의 소수 $$p$$가 계산할 이항계수의 약수인지, 실제 계산을 하지 않고 알 수 있는 방법을 제공합니다. $$m$$진법으로 나타낸, $$n$$과 $$k$$를 비교해서, $$k$$의 어느 한 자리수가 $$i$$의 같은 자리의 자리수와 같고, $$k > n$$일때, $$\binom{n}{k} ≡ 0mod$$ $$p$$일 것입니다.
 {:.info}
 
@@ -551,8 +551,8 @@ if __name__ == '__main__':
 
 뤼카의 정리로 문제를 분해 한 다음, 페르마의 소정리나, 파스칼의 삼각형을 통해서 작은 부분문제들을 해결합시다.
 
-<i class="fas fa-exclamation-triangle"></i> <strong>주의</strong><br>
-이번 문제에서는 전처리를 하지 않았습니다. 매우 큰 단 하나의 n 에 대해서는 전처리를 하지 않는것이 효율적입니다. 일반적으로 뤼카의 정리로 문제를 쪼개면, lookup table로 쓸 메모리가 그렇게 크지 않아서, 여러 이항계수를 구하는 상황일때는 전처리를 하는것이 효율적입니다. 우리 문제상황에서는 n이 좀 많이 커서 $$O(n)$$의 공간을 잡아먹는데, 이 비용이 결코 싸지 않아서 따로 전처리를 하지 않은 것입니다. <br><br>
+<i class="fas fa-exclamation-triangle"></i> <strong>주의</strong><br/>
+이번 문제에서는 전처리를 하지 않았습니다. 매우 큰 단 하나의 n 에 대해서는 전처리를 하지 않는것이 효율적입니다. 일반적으로 뤼카의 정리로 문제를 쪼개면, lookup table로 쓸 메모리가 그렇게 크지 않아서, 여러 이항계수를 구하는 상황일때는 전처리를 하는것이 효율적입니다. 우리 문제상황에서는 n이 좀 많이 커서 $$O(n)$$의 공간을 잡아먹는데, 이 비용이 결코 싸지 않아서 따로 전처리를 하지 않은 것입니다. <br/><br/>
 **하지만** 다른 일반적인 경우에서는 전처리를 하는것은 나중에 많은 시간을 절약시켜 주는 매우 좋은 일입니다. 문제 풀이에 참고하시기 바랍니다.
 {:.warning}
 
@@ -570,14 +570,14 @@ $$x≡a_{0}\mod p_{0}$$, $$x≡a_{1}\mod p_{1} \cdot\cdot\cdot$$ , $$x≡a_{r} \
 
 합동식을 만족시키는 $$x$$를 찾을 수 있습니다.
 
-<i class="fas fa-info-circle"></i> <strong>정보</strong><br>
-중국인 나머지 정리를 링크 걸어놓은것을 보면 알 수 있겠지만, 중국인 나머지의 결론은 아래와 같습니다.<br><br>
+<i class="fas fa-info-circle"></i> <strong>정보</strong><br/>
+중국인 나머지 정리를 링크 걸어놓은것을 보면 알 수 있겠지만, 중국인 나머지의 결론은 아래와 같습니다.<br/><br/>
 $$n_1,n_2,\cdot\cdot\cdot,n_r$$을 $$i\neq j$$에 대해, $$n_i,n_j$$가 서로소인 양의 정수 일 때, 연립합동식
 $$x≡a_{1}(\mod n_1)$$
 $$x≡a_{2}(\mod n_2)$$
 $$\cdot\cdot\cdot$$
 $$x≡a_{r}(\mod n_r)$$은
-$$\mod n_1 n_2 \cdot\cdot\cdot n_r$$ 에 대해서 유일한 공통 해를 가지고,<br>
+$$\mod n_1 n_2 \cdot\cdot\cdot n_r$$ 에 대해서 유일한 공통 해를 가지고,<br/>
 해를 구하는 법은
 $$n = n_{1}n_{2}\cdot\cdot\cdot n_{r}$$, $$N_{i} = \frac{n}{n_{i}}$$ 라고 정의하면
 $$x = a_{1}N_{1}x_{1} + a_{2}N_{2}x_{2} + \cdot\cdot\cdot + a_{r}N_{r}x_{r}$$
@@ -733,7 +733,7 @@ if __name__ == '__main__':
     print(binom(8100,4000,mod_facts)) # should be 924
 ```
 
-<i class="fas fa-info-circle"></i> <strong>정보</strong><br>
+<i class="fas fa-info-circle"></i> <strong>정보</strong><br/>
 큰 m에 대해서 소인수 분해를 하는것은 non-trivial 하고, 효율적인 알고리즘이 아직 발견되지 않았습니다. 하지만, m이 적당한 크기일때(일반적인 문제 상황에서는 대부분 그러합니다) m을 소인수 분해 하는것은 그리 어렵지 않습니다. 당신의 알고리즘을 직접 작성해도 되고, 온라인 상에 있는 계산기 들을 사용해서 소인수 분해한 값을 찾아야 합니다.
 꼭 기억해야 할 것은 우리의 이번 접근에, 소인수들이 square-free 한 상황에서만 가능하다는 것입니다.
 {:.info}
@@ -747,12 +747,12 @@ if __name__ == '__main__':
 
 큰 수의 이항계수 $$\binom{n}{k} mod$$ $$m$$을 구하기 위해서는 아래의 수순을 밟아야 합니다.
 
--   $$m$$을 소인수 분해 하여 $$m = p_{0}^{e_{0}},...,p_{r}^{e_{r}}$$ 의 결과물을 얻어냅니다
--   (일반화된) 뤼카의 정리를 이용하여 각 $$\binom{n}{k}mod p_{i}^{e_{i}}$$를 부분문제들로 쪼갭니다
--   $$\binom{n}{k}mod p_{i}^{e_{i}}$$의 부분문제들을 페르마의 소정리나, 파스칼의 삼각형으로 풀어 냅니다
--   중국인 나머지의 정리를 이용해서 원래 문제의 답을 알아냅니다.
+- $$m$$을 소인수 분해 하여 $$m = p_{0}^{e_{0}},...,p_{r}^{e_{r}}$$ 의 결과물을 얻어냅니다
+- (일반화된) 뤼카의 정리를 이용하여 각 $$\binom{n}{k}mod p_{i}^{e_{i}}$$를 부분문제들로 쪼갭니다
+- $$\binom{n}{k}mod p_{i}^{e_{i}}$$의 부분문제들을 페르마의 소정리나, 파스칼의 삼각형으로 풀어 냅니다
+- 중국인 나머지의 정리를 이용해서 원래 문제의 답을 알아냅니다.
 
-<i class="fas fa-info-circle"></i> <strong>정보</strong><br>
+<i class="fas fa-info-circle"></i> <strong>정보</strong><br/>
 한가지 유념할 사항은, $$p_{i} > n$$ 이라면 부분문제로 쪼갤것이 없고, 그냥 그 문제를 페르마의 소정리나 파스칼의 삼각형을 이용해서 풀어내면 된다는 것입니다.
 {:.info}
 
@@ -761,7 +761,7 @@ if __name__ == '__main__':
 # 참고한 글들
 
 모듈러 지수승(Modular Exponentiation) C++ 코드 : [링크](https://www.geeksforgeeks.org/modular-exponentiation-power-in-modular-arithmetic/)
-<br>중국인의 나머지 정리 나무위키 문서 : [링크](https://namu.wiki/w/%EC%A4%91%EA%B5%AD%EC%9D%B8%EC%9D%98%20%EB%82%98%EB%A8%B8%EC%A7%80%20%EC%A0%95%EB%A6%AC)
-<br>그 외 본 글에 링크한 모든 글들
+<br/>중국인의 나머지 정리 나무위키 문서 : [링크](https://namu.wiki/w/%EC%A4%91%EA%B5%AD%EC%9D%B8%EC%9D%98%20%EB%82%98%EB%A8%B8%EC%A7%80%20%EC%A0%95%EB%A6%AC)
+<br/>그 외 본 글에 링크한 모든 글들
 
 읽어주셔서 감사합니다.

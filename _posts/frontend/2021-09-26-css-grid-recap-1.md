@@ -208,5 +208,5 @@ Flexbox와는 다르게, grid는 속성이 좀 많아서 한 게시물로만 정
 # 참고한 글
 
 - 웹 개발자의 영원한 친구 mdn
-- <https://css-tricks.com/introduction-fr-css-unit/>
-- <https://www.webdesignerdepot.com/2018/09/grid-vs-flexbox-which-should-you-choose/>
+- [https://css-tricks.com/introduction-fr-css-unit/](https://css-tricks.com/introduction-fr-css-unit/)
+- [https://www.webdesignerdepot.com/2018/09/grid-vs-flexbox-which-should-you-choose/](https://www.webdesignerdepot.com/2018/09/grid-vs-flexbox-which-should-you-choose/)

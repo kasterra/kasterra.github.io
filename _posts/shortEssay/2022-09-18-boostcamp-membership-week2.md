@@ -45,12 +45,12 @@ FE개발의 동반자입니다. 모듈화는 정말로 중요한 것이지만, �
 
 특히 path와 publicPath에 관해서 이게 모지... 하면서 헷갈렸었는데, 그때 참고한 문서들 링크를 남겨두고자 합니다.
 
-- <https://bambielli.com/til/2017-04-22-webpack-pt-1/>
-- <http://52.78.22.201/tutorials/translate/webpack-the-confusing-parts/>
+- [https://bambielli.com/til/2017-04-22-webpack-pt-1/](https://bambielli.com/til/2017-04-22-webpack-pt-1/)
+- [http://52.78.22.201/tutorials/translate/webpack-the-confusing-parts/](http://52.78.22.201/tutorials/translate/webpack-the-confusing-parts/)
 
 이번 프로젝트에서 webpack 미들웨어를 express에 달아서, 예전에 [영상 CRUD 서비스](https://github.com/kasterra/wetube-clone) 와는 다르게 `npm dev`을 하나만 띄울 수 있다는 점이 매우 매력적이었습니다. 관련 docs를 남겨놓겠습니다.
 
-<https://jeonghwan-kim.github.io/dev/2020/07/18/webpack-dev-middleware.html>
+[https://jeonghwan-kim.github.io/dev/2020/07/18/webpack-dev-middleware.html](https://jeonghwan-kim.github.io/dev/2020/07/18/webpack-dev-middleware.html)
 
 ## svg
 

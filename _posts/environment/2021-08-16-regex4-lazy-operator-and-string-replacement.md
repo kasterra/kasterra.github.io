@@ -81,15 +81,15 @@ console.log(`match[1] : ${match5[1]} match[2] : ${match5[2]}`); // '' 'aaa'
 
 붉은 색으로 표시한 부분은 위 정규 표현식에 `"`에 일치하는 부분이고, 연두색으로 칠한 부분이 `.*`에 일치하는 것 입니다. 이 매치가 결코 잘못된 것은 아니지만은, 우리가 원하는 형태는 아님이 확실합니다. 욕심 수량자는 본인의 소임을 다 했기 때문에, 욕심 수량자를 탓할 수는 없죠. 여기서, 애꿎은 욕심 수량자를 탓하지 말고 최소한의 일치를 지향하는, 겸허 수량자를 사용하면 우리의 문제를 해결 할 수 있습니다.
 
-<i class="fas fa-info-circle"></i> <strong>정규 표현식의 g 옵션</strong><br>
-일반적으로 문자열을 정규 표현식에 일치 시키면, 문자열을 쓱 훑다가, 매칭 되는 첫 경우만 찾고, 검색을 끝냅니다.<br>
-하지만, g 옵션을 사용하면, 정규 표현식에 대응하는 모든 문자를 검색합니다. <br>
+<i class="fas fa-info-circle"></i> <strong>정규 표현식의 g 옵션</strong><br/>
+일반적으로 문자열을 정규 표현식에 일치 시키면, 문자열을 쓱 훑다가, 매칭 되는 첫 경우만 찾고, 검색을 끝냅니다.<br/>
+하지만, g 옵션을 사용하면, 정규 표현식에 대응하는 모든 문자를 검색합니다. <br/>
 `/regex/`에 g 옵션을 사용하려면 `/regex/g` 처럼, 감싸는 `/` 뒤에 g를 덧대면 됩니다.
 {:.info #goption}
 
-<i class="fas fa-exclamation-triangle"></i> <strong>g옵션 사용시 주의사항</strong><br>
-지금까지 javascript를 통해서, 정규 표현식을 확인 할 때, `.match`메소드를 활용했었습니다. 하지만, g 옵션이 활성화가 되면, `.match()`메소드는 캡처된 결과를 **반환하지 않습니다**.<br>
-`Regexp.exec()`을 사용하거나, `String.prototype.matchAll()`을 사용해야 하는데, 이 글에서는 `String.prototype.matchAll()`을 이용해서 설명하겠습니다.<br>
+<i class="fas fa-exclamation-triangle"></i> <strong>g옵션 사용시 주의사항</strong><br/>
+지금까지 javascript를 통해서, 정규 표현식을 확인 할 때, `.match`메소드를 활용했었습니다. 하지만, g 옵션이 활성화가 되면, `.match()`메소드는 캡처된 결과를 **반환하지 않습니다**.<br/>
+`Regexp.exec()`을 사용하거나, `String.prototype.matchAll()`을 사용해야 하는데, 이 글에서는 `String.prototype.matchAll()`을 이용해서 설명하겠습니다.<br/>
 자세한 사항은 [mdn 문서](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match) 참조 바랍니다.
 {:.warning}
 
@@ -100,7 +100,7 @@ const testString = '"apple", "banana", "melon"';
 const regexp = /(".*?")/g;
 const match = [...testString.matchAll(regexp)];
 console.log(
-    `match[0] : ${match[0][0]} match[1] : ${match[1][0]} match[2] : ${match[2][0]}`
+  `match[0] : ${match[0][0]} match[1] : ${match[1][0]} match[2] : ${match[2][0]}`
 );
 //"apple" "banana" "melon"이 따로 따로 나옴을 볼 수 있음
 ```
@@ -166,8 +166,8 @@ vscode에서 파일을 편집 할 때에, **파일에서 `ctrl+f`를 눌렀을 �
 
 ```javascript
 function replacer(match, p1, p2, p3, offset, string) {
-    // p1 is nondigits, p2 digits, and p3 non-alphanumerics
-    return [p1, p2, p3].join(" - ");
+  // p1 is nondigits, p2 digits, and p3 non-alphanumerics
+  return [p1, p2, p3].join(" - ");
 }
 var newString = "abc12345#$*%".replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
 console.log(newString); // abc - 12345 - #$*%
@@ -198,7 +198,9 @@ sed의 `s/regex/replacement/g`라는 형식은 다른 언어에서도 사용할 
 $ echo 'Hong Gildong, Kim Chulsu' | perl -pe 's/([a-zA-Z]+) ([a-zA-Z]+)/$2 $1/g'
 Gildong Hong, Chulsu Kim
 ```
+
 # 마치며
+
 좀 글이 길어졌습니다. 정규 표현식을 사용해서, 문자열을 치환하는 방법에 대해서 알아보았습니다. 이 내용들을 한번에 이해하려는 기대는 사실 누구에게도 하면 안될 기대가 아니자 않나 싶긴 하지만, 코딩 인생에 있어서 엄청난 생산성 향상을 가져올 내용들이기 때문에, 이 내용들을 곰씹으면서 꼭 본인의 지식으로 만들기를 바랍니다.
 
 다음 포스팅에서는 아직 설명하지 못한 정규 표현식의 기능들과, 주요 정규 표현식 엔진에서의 문법 사용 가능 여부등을 정리해 볼까 합니다.
@@ -211,4 +213,4 @@ Gildong Hong, Chulsu Kim
 
 javascript에서의 `String.prototype.replace()`참고 자료 : [mdn 링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 
-<https://stackoverflow.com/questions/42179046/what-flavor-of-regex-does-visual-studio-code-use> : vscode에 관한 부분을 적을 때 참고한 stackoverflow 글
+[https://stackoverflow.com/questions/42179046/what-flavor-of-regex-does-visual-studio-code-use](https://stackoverflow.com/questions/42179046/what-flavor-of-regex-does-visual-studio-code-use) : vscode에 관한 부분을 적을 때 참고한 stackoverflow 글

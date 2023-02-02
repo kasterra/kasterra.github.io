@@ -124,4 +124,4 @@ app.route("/*").all((req, res) => {
 
 사실 이번 과제를 하면서 FE 쪽에 집중을 하여서 BE 쪽의 작업량은 별게 없고, 웹팩 쪽 설정을 이해하지 않고는 사실 이것들을 이해할 수 있을까 하는 생각까지 드네요. 정리하니까 참 별일 없는데, 관련해서 찾아 본 자료들은 참 많았습니다. 제가 삽질을 할 때, 참고했던 자료들을 첨부하면서 글을 마무리 하려고 합니다. 끝까지 읽어주셔서 감사합니다.
 
-- <https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html>
+- [https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html)

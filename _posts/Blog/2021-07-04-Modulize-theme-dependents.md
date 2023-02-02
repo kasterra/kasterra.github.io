@@ -18,9 +18,9 @@ image: /images/thumbnails/jekyll.png
 
 `TeXt`를 골랐던 이유 중 하나입니다. 기존 블로그에서 작업을 했을때 중간에 강조하고 싶은 정보(주의 사항) 등이나, 좀 더 강조가 되었으면 좋겠는 정보들을 표현할 때는 인용구 문법(>)을 이용해서 했는데, alert는 4가지의 색을 따로 제공하여 조금 더 필요에 맞게 사용할 수 있는 점이 있어서 좋았습니다.
 
-<i class="fas fa-info-circle"></i> <strong>2021년 7월 5일 추가</strong><br>
+<i class="fas fa-info-circle"></i> <strong>2021년 7월 5일 추가</strong><br/>
 지금 이 게시물을 읽고 있다면, 이걸 그대로 가져가는 것도 그렇게 나쁜 판단은 아니지만, 더욱 범용적인 대안이 있음을 말씀드리고 싶습니다.
-저같은 디자인이 젬병인 사람들을 위해서, 디자인을 잘하는 분들이 만든 [Bulma](https://bulma.io/)라는 서비스가 있습니다. 반응형이고, 모던한 자태를 뿜어내는 100% `css` 혹은 `sass` 파일들로 구성되어있는 디자인 파일 묶음입니다. 얼마나 많은 요소들을 담은지 직접 공식 문서를 통해서 확인을 해보셨으면 좋겠네요<br>
+저같은 디자인이 젬병인 사람들을 위해서, 디자인을 잘하는 분들이 만든 [Bulma](https://bulma.io/)라는 서비스가 있습니다. 반응형이고, 모던한 자태를 뿜어내는 100% `css` 혹은 `sass` 파일들로 구성되어있는 디자인 파일 묶음입니다. 얼마나 많은 요소들을 담은지 직접 공식 문서를 통해서 확인을 해보셨으면 좋겠네요<br/>
 `TeXt`를 고른 이유였던 다양한 디자인 요소 존재가 필요없어 지는 순간이 와버렸군요. 기본 Bulma 테마가 마음에 안든다면, 마음에 드는 테마를 [여기서](https://jenil.github.io/bulmaswatch/) 고르면 됩니다.
 {:.info}
 
@@ -28,31 +28,31 @@ image: /images/thumbnails/jekyll.png
 
 ```scss
 p.success {
-    padding: 0.5rem 1rem;
-    background-color: rgba($green, 0.1);
-    border: 1px solid $green;
-    border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba($green, 0.1);
+  border: 1px solid $green;
+  border-radius: 0.4rem;
 }
 
 p.info {
-    padding: 0.5rem 1rem;
-    background-color: rgba($blue, 0.1);
-    border: 1px solid $blue;
-    border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba($blue, 0.1);
+  border: 1px solid $blue;
+  border-radius: 0.4rem;
 }
 
 p.warning {
-    padding: 0.5rem 1rem;
-    background-color: rgba($yellow, 0.1);
-    border: 1px solid $yellow;
-    border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba($yellow, 0.1);
+  border: 1px solid $yellow;
+  border-radius: 0.4rem;
 }
 
 p.error {
-    padding: 0.5rem 1rem;
-    background-color: rgba($red, 0.1);
-    border: 1px solid $red;
-    border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba($red, 0.1);
+  border: 1px solid $red;
+  border-radius: 0.4rem;
 }
 ```
 
@@ -64,8 +64,8 @@ p.error {
 
 ```html
 <script
-    src="https://kit.fontawesome.com/42fb684910.js"
-    crossorigin="anonymous"
+  src="https://kit.fontawesome.com/42fb684910.js"
+  crossorigin="anonymous"
 ></script>
 ```
 
@@ -78,7 +78,7 @@ p.error {
 
 ```yaml
 kramdown:
-    math_engine: katex
+  math_engine: katex
 ```
 
 `include/head.html` 등에 추가할 내용
@@ -86,28 +86,28 @@ kramdown:
 ```html
 <!--KaTeX-->
 <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
-    crossorigin="anonymous"
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+  crossorigin="anonymous"
 />
 <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+  integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+  crossorigin="anonymous"
 ></script>
 <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
-    crossorigin="anonymous"
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+  integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+  crossorigin="anonymous"
 ></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-            // ...options...
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      // ...options...
     });
+  });
 </script>
 ```

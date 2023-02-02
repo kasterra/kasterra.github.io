@@ -72,7 +72,7 @@ mysql을 설치하는데에는 [digital ocean에서 제공하는 가이드](http
 
 mysql을 설치하였으면, 외부에서 접속할 수 있는 사용자를 만들어야 할 것입니다. 이것도 참조한 링크가 있어서 공유합니다.
 
-<https://cjh5414.github.io/mysql-create-user/>
+[https://cjh5414.github.io/mysql-create-user/](https://cjh5414.github.io/mysql-create-user/)
 
 ```bash
 mysql -u root
@@ -92,8 +92,8 @@ mysql> exit;
 
 이제 우리는 외부에서 사용할 수 있는 유저를 만들었고, 해당 유저에게 권한을 주었지만, 지금 이 상태로는 db에 접근을 할 수 없습니다. 결론부터 말씀드리자면 mysql의 `bind-address` 설정이 `127.0.0.1`로 되어 있어서 외부에서 접근을 할 수 없기 때문이고, 이는 수정해 주면 됩니다. 관련 문서들을 공유합니다.
 
-- <https://zetawiki.com/wiki/MySQL_ERROR_2003_(HY000):_Can't_connect_to_MySQL_server_on>
-- <https://yoshikixdrum.tistory.com/217>
+- [https://zetawiki.com/wiki/MySQL*ERROR_2003*(HY000):\_Can't_connect_to_MySQL_server_on](<https://zetawiki.com/wiki/MySQL_ERROR_2003_(HY000):_Can't_connect_to_MySQL_server_on>)
+- [https://yoshikixdrum.tistory.com/217](https://yoshikixdrum.tistory.com/217)
 
 ```bash
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf

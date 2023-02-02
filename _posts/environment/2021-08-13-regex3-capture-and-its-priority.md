@@ -15,10 +15,10 @@ series: 정규식
 
 정규 표현식의 결과를 활용해서 문자열을 조작하는 방법을 설명하기 전에, 정규 표현식의 검색의 결과가 원하는 대로 나오게 하기 위한 지식을 먼저 하나 알고 가는것이 좋을 것 같습니다. 정규 표현식의 일치는 크게 다음 네가지로 구분할 수 있습니다.
 
--   완전 일치 : 정규 표현식이 주어진 문자열 **전체에 일치**
--   전방 일치 : 정규 표현식이 주어진 문자열의 **접두사에 일치**
--   후방 일치 : 정규 표현식이 주어진 문자열의 **접미사에 일치**
--   부분 일치 : 정규 표현식이 주어진 문자열의 **부분 문자열에 일치**
+- 완전 일치 : 정규 표현식이 주어진 문자열 **전체에 일치**
+- 전방 일치 : 정규 표현식이 주어진 문자열의 **접두사에 일치**
+- 후방 일치 : 정규 표현식이 주어진 문자열의 **접미사에 일치**
+- 부분 일치 : 정규 표현식이 주어진 문자열의 **부분 문자열에 일치**
 
 앞 포스팅에서, '정규 표현식이 특정한 패턴에 일치한다' 라고 했을 때의 의미는, 여기서 완전 일치의 예를 의미하는 것이었습니다. 예를 들어서 `[ab]*a[ab]{2}`라는 식은, *a,b로 구성되어 있으며 뒤에서부터 세번째 문자가 a 인 문자열*을 의미합니다. 이 때문에, 'aab'나 'bababa'에는 완전 일치하지만, 'babab'에는 완전 일치하지 않습니다. 하지만 부분 일치로 위의 식을 앞에서 말한 문자열들에 일치 시켜보면, 앞의 두개는 물론이고, 뒤의 'babab'에도 일치함을 볼 수 있습니다. 왜인지 살펴봅시다.
 
@@ -66,8 +66,8 @@ series: 정규식
 
 정규 표현식의 특정 서브 패턴에 대해서 서브 매치를 취득하려면 '이 서브 패턴의 서브매치를 원한다'라고 콕 집어서 말해줘야 합니다. 정규 표현식에서 특정한 서브 매치를 지정하는 방법에는
 
--   순서대로 지정하기
--   이름으로 지정하기
+- 순서대로 지정하기
+- 이름으로 지정하기
 
 라는 두가지의 방법이 있습니다.
 
@@ -107,13 +107,13 @@ const day = "12/08/2021";
 let regexp = /(?<day>\d{2})\/(?<month>\d{2})\/(?<year>\d{4})/;
 let match = day.match(regexp);
 console.log(
-    `${match.groups.year}년 ${match.groups.month}월 ${match.groups.day}일`
+  `${match.groups.year}년 ${match.groups.month}월 ${match.groups.day}일`
 ); //2021년 08월 12일
 
 regexp = /((?<day>\d{2})\/(?<month>\d{2})\/(?<year>\d{4}))/;
 match = day.match(regexp);
 console.log(
-    `${match.groups.year}년 ${match.groups.month}월 ${match.groups.day}일`
+  `${match.groups.year}년 ${match.groups.month}월 ${match.groups.day}일`
 ); //2021년 08월 12일
 ```
 
@@ -198,23 +198,26 @@ console.log(`match[1] : ${match[1]} match[2] : ${match[2]}`);
 정규 표현식을 왼쪽부터 오른쪽으로 읽으므로, `(fuga|fugah)`를 우선 평가합니다. `fuga`가 왼쪽에 있고, 일치하므로, `fuga`를 선택합니다. 이제 정규 표현식은 남은 문자열인 "hoge"를 평가해야 합니다. 이제 일치 하면서, 가장 오른쪽에 있는 `hoge`가 일치하게 됩니다.
 
 # 마치며
+
 이번 포스팅에서는 서브 패턴의 일치 결과를 **캡처**연산을 통해서 사용하는 방법과, 해당 캡처 연산을 올바르게 사용하기 위한 우선순위까지 직접 정규 표현식을 실행 시켜보면서 확인해 보았습니다.
 
-**왼쪽부터 오른쪽**이라는 원칙 자체는 이해하기 어려운 것이 아니지만, 이 원칙을 잠시 빗겨나가고 싶은 경우와, 기본적으로 최대한 일치시키려고 하는 정규 표현식의 수량자의 **욕심**쟁이 성질 때문에, 예상과는 다른 서브매치를 취득하는 경우도 있습니다. 
+**왼쪽부터 오른쪽**이라는 원칙 자체는 이해하기 어려운 것이 아니지만, 이 원칙을 잠시 빗겨나가고 싶은 경우와, 기본적으로 최대한 일치시키려고 하는 정규 표현식의 수량자의 **욕심**쟁이 성질 때문에, 예상과는 다른 서브매치를 취득하는 경우도 있습니다.
 
 "(따옴표)로 감싸진 문자열들의 집합으로 이루어진 문자열을 파싱하기 위해서, 아래와 같이 정규 표현식을 작성하고 실행하면 이런 결과가 나옵니다.
+
 ```javascript
-const testString = "\"apple\", \"banana\", \"melon\"";
+const testString = '"apple", "banana", "melon"';
 const regexp = /(".*")/;
 const match = testString.match(regexp);
-console.log(`match[1] : ${match[1]}`)
+console.log(`match[1] : ${match[1]}`);
 ```
-`match[1] : "apple", "banana", "melon"` 이라는 결과가요. 파싱을 목적으로 하기 위해서 이렇게 식을 작성했는데, 문자열 한 뭉텅이가 그냥 나와버리는 결과가 발생 했습니다. 이러한 문제를 정규 표현식에서 어떻게 해결하는지, 욕심 연산자와, 겸허 연산자를 다루는 다음 포스팅에서 알아보도록 하겠습니다. 
 
-이번 포스팅은 분량이 좀 길어서 읽기 힘들었을 것 같은데, 끝까지 읽어주신 여러분께 정말로 감사를 표합니다. 
+`match[1] : "apple", "banana", "melon"` 이라는 결과가요. 파싱을 목적으로 하기 위해서 이렇게 식을 작성했는데, 문자열 한 뭉텅이가 그냥 나와버리는 결과가 발생 했습니다. 이러한 문제를 정규 표현식에서 어떻게 해결하는지, 욕심 연산자와, 겸허 연산자를 다루는 다음 포스팅에서 알아보도록 하겠습니다.
+
+이번 포스팅은 분량이 좀 길어서 읽기 힘들었을 것 같은데, 끝까지 읽어주신 여러분께 정말로 감사를 표합니다.
 
 # 참고한 자료
 
 [다양한 언어로 배우는 정규표현식 최신 엔진 구현과 이론적 배경을 배우다(신야 료마 , 스즈키 유스케 , 타카타 켄 지음)](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9791185890456)
 
-<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges> : 자바스크립트 코드 작성 시 참고했던 mdn 페이지
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Groups_and_Ranges) : 자바스크립트 코드 작성 시 참고했던 mdn 페이지

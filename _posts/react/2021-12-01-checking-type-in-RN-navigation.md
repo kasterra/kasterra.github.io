@@ -50,7 +50,7 @@ function App() {
 export default App;
 ```
 
-<div style="display:flex;justify-content:center;"><https://reactnavigation.org/docs/hello-react-navigation> 에서 c-p한 예제 코드</div>
+<div style="display:flex;justify-content:center;">https://reactnavigation.org/docs/hello-react-navigation 에서 c-p한 예제 코드</div>
 
 대략적으로 위의 코드를 소개하자면 이렇습니다. `createStackNavigator()`을 이용해서, `Stack`을 만듭니다. 그리고, 그 만들어진 Stack으로 하단의 `App` Component에서 `Stack.Navigator`과 `Stack.Screen`이라는 요소를 활용하는 것을 볼 수 있습니다. `Stack.Navigator`는 `react-router-dom` 에서, `<Router>`에 대응하고, `Stack.Screen`는 `<Route>`에 대응한다고 보시면 됩니다. `Stack.Screen`의 `name` prop에는 주소에 해당하는 이름을 넣고, `component` prop에는 렌더링 될 컴포넌트를 넣습니다. 이것 말고도 여러 옵션들이 있지만, 다루고자 하는 주제에서 좀 벗어나는 내용이기 때문에 넘기도록 하겠습니다.
 
@@ -127,6 +127,6 @@ function ProfileScreen({ route, navigation }: profileProps) {
 
 # 참고한 글
 
-- <https://reactnavigation.org/docs/hello-react-navigation>
-- <https://reactnavigation.org/docs/typescript/>
+- [https://reactnavigation.org/docs/hello-react-navigation](https://reactnavigation.org/docs/hello-react-navigation)
+- [https://reactnavigation.org/docs/typescript/](https://reactnavigation.org/docs/typescript/)
   {% endraw %}

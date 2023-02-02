@@ -38,7 +38,7 @@ category: blog
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="9" max="16" style="width:80%"></progress><p>9/16</p></div>
 <hr>
 
@@ -52,7 +52,7 @@ jekyll은 정적 페이지 생성기라서, jekyll로 만든 github pages 블로
 
 ## utterances 설치
 
-<https://github.com/apps/utterances> 에 들어가서 설치를 합시다.
+[https://github.com/apps/utterances](https://github.com/apps/utterances) 에 들어가서 설치를 합시다.
 
 들어가서 install을 누르면 선택지가 두가지 나올 것입니다. 모든 리포지토리에 대해서 설정을 할지, 아니면 특정 한 리포지토리에만 설치를 할지 묻는 것인데요, 일단 지금 현재로는 github-pages로 운영할 페이지는 이 블로그 하나밖에 없기에, 후자를 택했습니다.
 
@@ -74,12 +74,12 @@ jekyll은 정적 페이지 생성기라서, jekyll로 만든 github pages 블로
 ```html
 {%- if page.comment -%}
 <script
-    src="https://utteranc.es/client.js"
-    repo="kasterra/kasterra.github.io"
-    issue-term="title"
-    theme="github-light"
-    crossorigin="anonymous"
-    async
+  src="https://utteranc.es/client.js"
+  repo="kasterra/kasterra.github.io"
+  issue-term="title"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
 ></script>
 {%- endif -%}
 ```
@@ -92,19 +92,19 @@ jekyll은 정적 페이지 생성기라서, jekyll로 만든 github pages 블로
 
 ```yaml
 defaults:
-    - scope:
-          path: ""
-          type: posts
-      values:
-          layout: post
-          sharing: true
-          license: true
-          aside:
-              toc: true
-          show_edit_on_github: true
-          show_subscribe: true
-          pageview: true
-          comment: true # 이 부분을 추가했습니다.
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      sharing: true
+      license: true
+      aside:
+        toc: true
+      show_edit_on_github: true
+      show_subscribe: true
+      pageview: true
+      comment: true # 이 부분을 추가했습니다.
 ```
 
 이제 정상적으로 동작하는지 확인해보겠습니다.
@@ -135,13 +135,13 @@ defaults:
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="10" max="16" style="width:80%"></progress><p>10/16</p></div>
 <hr>
 
 # 관련 게시글
 
-<https://github.com/wu-ming/jekyll-related-posts> 을 참고해서 만들었습니다. 간단히, 원리를 소개하자면, 게시글의 태그를 확인해 보면서, 일치하는 태그가 많을수록 더 관련있는 게시글로 판단을 하는 코드입니다. 대단한 자료분석은 하지 않지만, 랜덤한 게시글을 추천하는것보다는 낫다고 봅니다.
+[https://github.com/wu-ming/jekyll-related-posts](https://github.com/wu-ming/jekyll-related-posts) 을 참고해서 만들었습니다. 간단히, 원리를 소개하자면, 게시글의 태그를 확인해 보면서, 일치하는 태그가 많을수록 더 관련있는 게시글로 판단을 하는 코드입니다. 대단한 자료분석은 하지 않지만, 랜덤한 게시글을 추천하는것보다는 낫다고 봅니다.
 예전에 설명했던 `TeXt`의 [swiper](https://tianqi.name/jekyll-TeXt-theme/docs/en/swiper)기능을 결합해서 만들었습니다.
 
 **related-post.html**
@@ -157,66 +157,62 @@ endfor %} {% assign tagsTotal = matchingTags.size %} {% if tagsTotal < 10 %} {%
 assign tagsTotal = tagsTotal | prepend: "0" %} {% else %} {% assign tagsTotal =
 tagsTotal %} {% endif %} |
 <article>
-    <strong><!--{{ tagsTotal }}--></strong>
-    <header>
-        <h5>{{ post.title }}</h5>
-    </header>
-    <section>
-        <a href="{{ site.baseurl }}{{ post.url }}">
-            <img
-                width="240"
-                height="150"
-                src="{{ post.cover }}"
-                class="img-fluid"
-                alt="{{ post.cover }}"
-            />
-        </a>
-        <div>
-            {% for tag in post.tags %}
-            <a
-                class="button button--secondary button--pill button--sm"
-                href="/archive.html?tag={{tag}}"
-                >{{tag}}</a
-            >
-            {% endfor %}
-        </div>
-    </section>
+  <strong><!--{{ tagsTotal }}--></strong>
+  <header>
+    <h5>{{ post.title }}</h5>
+  </header>
+  <section>
+    <a href="{{ site.baseurl }}{{ post.url }}">
+      <img
+        width="240"
+        height="150"
+        src="{{ post.cover }}"
+        class="img-fluid"
+        alt="{{ post.cover }}"
+      />
+    </a>
+    <div>
+      {% for tag in post.tags %}
+      <a
+        class="button button--secondary button--pill button--sm"
+        href="/archive.html?tag={{tag}}"
+        >{{tag}}</a
+      >
+      {% endfor %}
+    </div>
+  </section>
 </article>
 {% endif %} {% endfor %} {% endcapture %} {% assign relatedPosts = posts |
 split: '|' | sort | reverse %}
 <header>
-    <h4>관련 포스트 목록:</h4>
-    <hr />
+  <h4>관련 포스트 목록:</h4>
+  <hr />
 </header>
 <style>
-    .related {
-        width: 500px;
-        max-width: 100%;
-    }
+  .related {
+    width: 500px;
+    max-width: 100%;
+  }
 </style>
 <div style="display: flex; justify-content: center;">
-    <div class="swiper related">
-        <div style="text-align: center;">
-            <div class="swiper__wrapper">
-                {% for i in (1..showRelatedPosts) %}
-                <div class="swiper__slide">{{ relatedPosts[i] }}</div>
-                {% endfor %}
-            </div>
-        </div>
-        <div
-            class="swiper__button swiper__button--prev fas fa-chevron-left"
-        ></div>
-        <div
-            class="swiper__button swiper__button--next fas fa-chevron-right"
-        ></div>
+  <div class="swiper related">
+    <div style="text-align: center;">
+      <div class="swiper__wrapper">
+        {% for i in (1..showRelatedPosts) %}
+        <div class="swiper__slide">{{ relatedPosts[i] }}</div>
+        {% endfor %}
+      </div>
     </div>
+    <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
+    <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
+  </div>
 </div>
 <script>
-    {%- include scripts/lib/swiper.js -%}
-      var SOURCES = window.TEXT_VARIABLES.sources;
-      window.Lazyload.js(SOURCES.jquery, function() {
-        $('.related').swiper();
-      });
+  {%- include scripts/lib/swiper.js -%}
+    var SOURCES = window.TEXT_VARIABLES.sources;
+    window.Lazyload.js(SOURCES.jquery, function() {
+      $('.related').swiper();
+    });
 </script>
 ```
 
@@ -226,7 +222,7 @@ split: '|' | sort | reverse %}
 {%- if page.show_related_posts -%} {%- include article/footer/related-post.html
 -%} {%- endif -%} {%- if _show_subscribe -%}
 <div class="article__subscribe">
-    {%- include article/footer/subscribe.html -%}
+  {%- include article/footer/subscribe.html -%}
 </div>
 {%- endif -%}
 ```
@@ -238,7 +234,7 @@ split: '|' | sort | reverse %}
 `velog`에는 한 포스팅으로 적기에는 너무나 긴 글들을 위해서, 글들을 한 시리즈로 묶고, 그것을 포스팅에 표시해주는 좋은 기능이 있습니다. `Jekyll` 에는 이를 공짜로 지원하지 않기에, 직접 만들어야죠 뭐.
 
 이 역시, 위의 관련 게시글 작성하는것처럼 매우 단순합니다.
-<https://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/>를 참고해서 뚝딱뚝딱 했습니다.
+[https://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/](https://digitaldrummerj.me/blogging-on-github-part-13-creating-an-article-series/)를 참고해서 뚝딱뚝딱 했습니다.
 
 ```html
 {%- if page.series -%} {% assign count = '0' %} {% assign idx = '0' %} {% for
@@ -246,76 +242,76 @@ post in site.posts reversed %} {% if post.series == page.series %} {% capture
 count %}{{ count | plus: '1' }}{% endcapture %} {% if post.url == page.url %} {%
 capture idx %}{{count}}{% endcapture %} {% endif %} {% endif %} {% endfor %}
 <style>
-    .panel {
-        margin: 20px 0px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
-    }
-    .panel--active {
-        opacity: 1;
-    }
+  .panel {
+    margin: 20px 0px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  .panel--active {
+    opacity: 1;
+  }
 
-    .seriesNote {
-        transform-origin: top left;
-        will-change: transform;
-        animation-duration: 200ms;
-        animation-timing-function: linear;
-    }
-    .seriesNote-content {
-        transform-origin: top left;
-        will-change: transform;
-        animation-duration: 200ms;
-        animation-timing-function: linear;
-        padding: 0px 15px;
-    }
-    .panel h4,
-    .panel h5,
-    .panel h6,
-    .panel i {
-        margin: 0.4rem 0rem;
-    }
-    .panel h4,
-    .panel h5 {
-        display: inline;
-    }
-    .panel-heading {
-        padding: 10px 15px;
-        position: relative;
-        background-color: #f5f5f5;
-        border-bottom: 1px solid #ddd;
-        border-top-right-radius: 3px;
-        border-top-left-radius: 3px;
-    }
-    .panel ul {
-        margin: 1em;
-    }
+  .seriesNote {
+    transform-origin: top left;
+    will-change: transform;
+    animation-duration: 200ms;
+    animation-timing-function: linear;
+  }
+  .seriesNote-content {
+    transform-origin: top left;
+    will-change: transform;
+    animation-duration: 200ms;
+    animation-timing-function: linear;
+    padding: 0px 15px;
+  }
+  .panel h4,
+  .panel h5,
+  .panel h6,
+  .panel i {
+    margin: 0.4rem 0rem;
+  }
+  .panel h4,
+  .panel h5 {
+    display: inline;
+  }
+  .panel-heading {
+    padding: 10px 15px;
+    position: relative;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+  .panel ul {
+    margin: 1em;
+  }
 </style>
 
 <div class="panel seriesNote">
-    <div class="panel-heading" style="position:relative;">
-        <h4>
-            이 포스트는 <strong>"{{page.series}}"</strong> 시리즈의
-            <strong>{{idx}}</strong>번째 포스트 입니다.
-        </h4>
-    </div>
-    <ul>
-        {% assign count = '0' %} {% for post in site.posts reversed %} {% if
-        post.series == page.series %} {% capture count %}{{ count | plus: '1'
-        }}{% endcapture %}
-        <li>
-            {% if page.url == post.url %}
-            <h5>{{post.title}}</h5>
-            {% else %}
-            <h5><a href="{{post.url}}">{{post.title}}</a></h5>
-            {% endif %}
-            <h6>{{post.excerpt}}</h6>
-        </li>
-        {% endif %} {% endfor %}
-    </ul>
+  <div class="panel-heading" style="position:relative;">
+    <h4>
+      이 포스트는 <strong>"{{page.series}}"</strong> 시리즈의
+      <strong>{{idx}}</strong>번째 포스트 입니다.
+    </h4>
+  </div>
+  <ul>
+    {% assign count = '0' %} {% for post in site.posts reversed %} {% if
+    post.series == page.series %} {% capture count %}{{ count | plus: '1' }}{%
+    endcapture %}
+    <li>
+      {% if page.url == post.url %}
+      <h5>{{post.title}}</h5>
+      {% else %}
+      <h5><a href="{{post.url}}">{{post.title}}</a></h5>
+      {% endif %}
+      <h6>{{post.excerpt}}</h6>
+    </li>
+    {% endif %} {% endfor %}
+  </ul>
 </div>
 {%- endif -%}
 ```

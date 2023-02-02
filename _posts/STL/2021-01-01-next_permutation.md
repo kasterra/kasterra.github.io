@@ -21,17 +21,17 @@ category: STL
 
 적당한 짧은 수열이면서 모든 원소가 다른'1 2 3 4'의 가능한 순열을 사전순으로 나열해 보도록 하자
 
--   1 2 3 4
--   1 2 4 3
--   1 3 2 4
--   1 3 4 2
--   1 4 2 3
--   1 4 3 2
--   2 1 3 4
--   2 1 4 3
--   2 3 1 4
--   ......
--   4 3 2 1
+- 1 2 3 4
+- 1 2 4 3
+- 1 3 2 4
+- 1 3 4 2
+- 1 4 2 3
+- 1 4 3 2
+- 2 1 3 4
+- 2 1 4 3
+- 2 3 1 4
+- ......
+- 4 3 2 1
 
 우리가 이 수열들을 나열할 때 방법이 여러가지가 있겠지만, next_permutation을 더 잘 이해하기 위해서 아래의 방법대로 해보자.
 
@@ -96,4 +96,4 @@ PS를 할 때, 유용하게 쓰이는 함수인 next_permutation의 구현은 �
 
 # 참고한 글
 
-<http://www.cplusplus.com/reference/algorithm/next_permutation/>
+[http://www.cplusplus.com/reference/algorithm/next_permutation/](http://www.cplusplus.com/reference/algorithm/next_permutation/)

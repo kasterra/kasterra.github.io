@@ -13,9 +13,9 @@ category: blog
 
 우선 이 글에서 만들 블로그는, 제가 삽질을 하면서 **아무튼** 만들어낸 블로그를, 만든 과정을 삽질을 털어내고, 개발한 내용을 깔끔하고, 체계적으로 `github`를 활용해 개발 워크플로를 남들한테 보여줄 수 있도록 해보자. 라는것이 이 시리즈의 목표입니다.
 
-<i class="fas fa-info-circle"></i> <strong>Note</strong><br>
-만약 `github`를 통한 개발 워크플로 라는게 뭐지 싶으신 분은<br>
-<https://www.huskyhoochu.com/issue-based-version-control-201/> 이 글을 한번 읽고 오세요.
+<i class="fas fa-info-circle"></i> <strong>Note</strong><br/>
+만약 `github`를 통한 개발 워크플로 라는게 뭐지 싶으신 분은<br/>
+[https://www.huskyhoochu.com/issue-based-version-control-201/](https://www.huskyhoochu.com/issue-based-version-control-201/) 이 글을 한번 읽고 오세요.
 {:.info}
 
 우선 제가 삽질을 하면서 만든, 그리고 이 포스팅을 통해서 다시 만들어서, 이번엔 github pages로 서비스에 올리기까지 해볼 블로그의 모습은 아래와 같습니다.
@@ -27,7 +27,7 @@ category: blog
 
 # 테마 포크 떠오기
 
-<https://github.com/kitian616/jekyll-TeXt-theme> `Github`에 `TeXt`테마가 올라와 있습니다. 이제 우리는 이걸 포크해와서, 우리의 입맛에 맞게 요리하기를 시작해 봅시다.
+[https://github.com/kitian616/jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme) `Github`에 `TeXt`테마가 올라와 있습니다. 이제 우리는 이걸 포크해와서, 우리의 입맛에 맞게 요리하기를 시작해 봅시다.
 ![](/images/blogmaking/setting.png)
 리포지토리의 `setting`에 들어가서, `본인의 계정 ID 이름`.github.io 로 리포지토리 이름을 변경해 주세요. 이러한 이름을 가진 리포지토리는 `github`에 "이것은 내 개인 블로그입니다" 라는 정보를 알려주는 역할을 합니다.
 
@@ -37,9 +37,9 @@ category: blog
 # 작업 시작
 
 본인이 만약에 딱히 테마를 건들이지 않고, 글만 올리겠다라고 생각한다면, 로컬 컴퓨터에 `ruby`를 설치하고 하는 그러한 과정을 거칠 필요가 없습니다.
-<br><br>
+<br/><br/>
 하지만, 이 포스팅 시리즈의 목적은, 기본 테마를 기반으로 한, **조금의 양념을 더 추가한** 블로그를 만들어보자 이기 때문에, 로컬에서도 작업을 진행할 필요가 있습니다.
-<https://jekyllrb-ko.github.io/docs/>을 참고해서, 각자 본인의 시스템에 맞게 진행하시면 됩니다.
+[https://jekyllrb-ko.github.io/docs/](https://jekyllrb-ko.github.io/docs/)을 참고해서, 각자 본인의 시스템에 맞게 진행하시면 됩니다.
 
 하나씩 차곡 차곡 진행해 봅시다. 우리의 여정을 미리 소개하자면 다음과 같습니다.
 
@@ -66,7 +66,7 @@ category: blog
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="1" max="16" style="width:80%"></progress><p>1/16</p></div>
 <hr>
 갈길이 멀어 보이지만, 차곡 차곡 한단계씩 하면 안될거 없다고 생각합니다. 한번 해봅시다! 아자!
@@ -129,27 +129,27 @@ category: blog
 
 Jekyll을 처음 다운받으면 대충 이러한 구조와 마주할 것입니다. 필요한것만 간략하게 설명하겠습니다. 추가로 설명이 필요하시다면, 댓글 남겨주세요
 
--   \_data 폴더 : 별로 수정할만한 내용은 없습니다.
-    -   `navagation.yml` : 만약에 블로그 상단에 나오는 내용들을 수정하고 싶으시다면 수정하시면 될것 같습니다.
-    -   `locale.yml` : `TeXt`테마 내에서 지원하지 않는 다른 외국어 설정을 넣으시고 싶으시면 수정하면 됩니다. 참고로 한국어는 이 테마에서 이미 로케일이 있습니다.
-    -   `variables.yml`: 블로그 내에서 yml 변수들을 모아놓은 파일입니다. 기본값을 수정하고 싶으시면 수정하면 될 듯 합니다.
--   \_includes 폴더 : 블로그 테마 내에서 이것저것 포함할 스닙셋들을 모아둔 폴더입니다. 내용물이 많아서, 다 설명은 못드리고, 커스터마이징을 하면서 차례차례 건드리지 않을까 싶습니다.
--   \_layouts 폴더 : 말 그대로 블로그 테마 레이아웃을 렌더링 할 때, 틀이 되는 파일입니다. 만약에 본인이 기본 테마를 좀 더 뒤집고 싶다면 수정하면 될것 같습니다. 이 포스트 내에서는 수정할 일이 없습니다.
--   \_sass 폴더 : sass 서식으로 된 스타일시트들이 이 폴더내에 있습니다. 커스터마이징을 하면서 이것저것 수정할 예정입니다.
--   \_config.yml : [밑](#_configyml에-관해)에서 자세히 설명할 예정입니다.
--   \_posts 폴더 : 포스트를 저장할 폴더입니다. `.md`나 `.html`로 문법에 맞게 작성하면 됩니다. 제목 형식은 `YYYY-MM-DD-제목.확장자`로 작성하면 됩니다.
--   about.md : 블로그 상단의 네비게이션 바에서, about를 클릭하면 나올 파일입니다.
--   index.html : 블로그를 들어가면 맨 처음에 나올 페이지 입니다.
+- \_data 폴더 : 별로 수정할만한 내용은 없습니다.
+  - `navagation.yml` : 만약에 블로그 상단에 나오는 내용들을 수정하고 싶으시다면 수정하시면 될것 같습니다.
+  - `locale.yml` : `TeXt`테마 내에서 지원하지 않는 다른 외국어 설정을 넣으시고 싶으시면 수정하면 됩니다. 참고로 한국어는 이 테마에서 이미 로케일이 있습니다.
+  - `variables.yml`: 블로그 내에서 yml 변수들을 모아놓은 파일입니다. 기본값을 수정하고 싶으시면 수정하면 될 듯 합니다.
+- \_includes 폴더 : 블로그 테마 내에서 이것저것 포함할 스닙셋들을 모아둔 폴더입니다. 내용물이 많아서, 다 설명은 못드리고, 커스터마이징을 하면서 차례차례 건드리지 않을까 싶습니다.
+- \_layouts 폴더 : 말 그대로 블로그 테마 레이아웃을 렌더링 할 때, 틀이 되는 파일입니다. 만약에 본인이 기본 테마를 좀 더 뒤집고 싶다면 수정하면 될것 같습니다. 이 포스트 내에서는 수정할 일이 없습니다.
+- \_sass 폴더 : sass 서식으로 된 스타일시트들이 이 폴더내에 있습니다. 커스터마이징을 하면서 이것저것 수정할 예정입니다.
+- \_config.yml : [밑](#_configyml에-관해)에서 자세히 설명할 예정입니다.
+- \_posts 폴더 : 포스트를 저장할 폴더입니다. `.md`나 `.html`로 문법에 맞게 작성하면 됩니다. 제목 형식은 `YYYY-MM-DD-제목.확장자`로 작성하면 됩니다.
+- about.md : 블로그 상단의 네비게이션 바에서, about를 클릭하면 나올 파일입니다.
+- index.html : 블로그를 들어가면 맨 처음에 나올 페이지 입니다.
 
 ### 블로그 경량화
 
 Jekyll 자체가 정적 페이지를 만드는것이다 보니, 별다른 최적화 호들갑은 떨지 않아도 되나, 파일이 너무많아 정신사나워서 좋을것은 딱히 없으니 지워도 되는 필요없는 파일/폴더 정도는 소개해 두겠습니다.
 
--   최상위 디렉토리에 있는 텍스트 파일들: 설명서나 라이센스에 해당하는 파일들이 대부분 입니다. `about.md`는 블로그 설명문을 적으실거면 남겨두세요
--   docker 폴더, Dockerfile.dev : `Docker`를 통해서 `Jekyll`을 사용하는데에 필요한 파일인듯 합니다. 이 포스트에서는 `Docker`를 사용하지 않고, 바로 로컬 머신에서 진행할것이기 때문에 필요가 없습니다.
--   .github 폴더 : `github`에서 `issue`를 제출할 때 쓰이는 틀입니다. 필요 없다 생각하시면 지우세요.
--   docs, screenshots, test 폴더 : 폴더 이름 그대로의 역할입니다. `screenshots` 폴더는 지우면 기본의 `about.md`의 몇몇 사진이 제대로 보이지 않을 수 있다는 점 정도는 참고하세요.
--   .travis.yml : `travis CI`라는 배포 자동화 툴에서 사용하는 파일이다만, 여기선 `github action`을 통해서 배포 자동화를 진행해볼 계획이기 때문에 필요가 없다.
+- 최상위 디렉토리에 있는 텍스트 파일들: 설명서나 라이센스에 해당하는 파일들이 대부분 입니다. `about.md`는 블로그 설명문을 적으실거면 남겨두세요
+- docker 폴더, Dockerfile.dev : `Docker`를 통해서 `Jekyll`을 사용하는데에 필요한 파일인듯 합니다. 이 포스트에서는 `Docker`를 사용하지 않고, 바로 로컬 머신에서 진행할것이기 때문에 필요가 없습니다.
+- .github 폴더 : `github`에서 `issue`를 제출할 때 쓰이는 틀입니다. 필요 없다 생각하시면 지우세요.
+- docs, screenshots, test 폴더 : 폴더 이름 그대로의 역할입니다. `screenshots` 폴더는 지우면 기본의 `about.md`의 몇몇 사진이 제대로 보이지 않을 수 있다는 점 정도는 참고하세요.
+- .travis.yml : `travis CI`라는 배포 자동화 툴에서 사용하는 파일이다만, 여기선 `github action`을 통해서 배포 자동화를 진행해볼 계획이기 때문에 필요가 없다.
 
 ## 포스트 작성 시
 
@@ -162,9 +162,9 @@ Jekyll 자체가 정적 페이지를 만드는것이다 보니, 별다른 최적
 문서 **맨 위**에 시작과 끝을 대시기호(-)로 감싼후 내용을 작성하면 됩니다.
 거의 필수적으로 작성하는 항목으로는
 
--   title : 해당 포스트의 제목입니다.
--   excerpt : 발췌문 입니다. 우리가 만들 블로그는 이 기능을 쓰진 않지만, `TeXt`자체 기본 설정에서는 이 값을 많이 씁니다.
--   layout : `Jekyll`이 페이지를 렌더링 해줄때, 어떤 탬플릿을 사용할지 알려주는 옵션입니다. 일반적으로 포스트에는 `article`옵션을 사용합니다.
+- title : 해당 포스트의 제목입니다.
+- excerpt : 발췌문 입니다. 우리가 만들 블로그는 이 기능을 쓰진 않지만, `TeXt`자체 기본 설정에서는 이 값을 많이 씁니다.
+- layout : `Jekyll`이 페이지를 렌더링 해줄때, 어떤 탬플릿을 사용할지 알려주는 옵션입니다. 일반적으로 포스트에는 `article`옵션을 사용합니다.
 
 이 외에도, 추가적으로 원하는 변수를 마음대로 생성할 수도 있습니다. 우리는 이 기능을 이용해서, 여러 기능들을 추가할 것입니다.
 
@@ -174,11 +174,11 @@ Jekyll 자체가 정적 페이지를 만드는것이다 보니, 별다른 최적
 
 일반적으로 `Liquid`에선, 제어문 등을 {%raw%}`{%제어문%}`{%endraw%}의 형태로 중괄호와 % 기호로 감싸서 사용하고, 변수의 사용은 {%raw%}`{{변수명}}`{%endraw%}의 형태로 사용한다라고만 알아두시고 이걸 읽으시면, `Liquid`가 정말로 간단하고 직관적임을 느끼시는데 도움이 되지 않을까 싶습니다.
 
-<i class="fas fa-info-circle"></i> <strong>Liquid 문법 사용으로 편집기에 나오는 에러는 진짜 에러가 아니에요!</strong><br>
+<i class="fas fa-info-circle"></i> <strong>Liquid 문법 사용으로 편집기에 나오는 에러는 진짜 에러가 아니에요!</strong><br/>
 `Liquid`문법을 HTML안에 넣으면, `vscode`와 같은 일반적인 편집기에서, 얘를 에러로 볼 경우가 있습니다. 하지만, 이건 `Liquid`의 문법을 `vscode`가 읽지 못했기 때문에 생기는 일로, 실제 구동상 문제는 전혀 없습니다. 참고로, liquid 플러그인을 설치해도, liquid 문법만 하이라이팅 해주지, 에러를 잡아주진 않습니다. 플러그인 설명에 에러를 보기 싫으면 HTML 문법 오류 검사를 끄라고 소개하고 있습니다.
 {:.info}
 
-좀 더 자세한 `Liquid`문법을 읽고 싶으시다면 공식 독스(<https://shopify.github.io/liquid/>)를 찬찬히 읽어보세요. 친절하게 잘 설명해서 읽기가 편합니다.
+좀 더 자세한 `Liquid`문법을 읽고 싶으시다면 [공식 독스](https://shopify.github.io/liquid/)를 찬찬히 읽어보세요. 친절하게 잘 설명해서 읽기가 편합니다.
 
 ### 변수 사용하기
 
@@ -237,7 +237,7 @@ C언어 계열의 `switch-case`문과 유사한 문법이라고 보시면 됩니
 
 ## Font Awesome 아이콘 -T
 
-Font Awesome은, 멋진 폰트를 제공하는 서비스가 **아닌** 멋진 아이콘을 제공하는 서비스 입니다. <https://fontawesome.com/>에 들어가서, 상단의 `icons`를 누르시면, 여러 아이콘을 검색할 수 있습니다.
+Font Awesome은, 멋진 폰트를 제공하는 서비스가 **아닌** 멋진 아이콘을 제공하는 서비스 입니다. [https://fontawesome.com/](https://fontawesome.com/)에 들어가서, 상단의 `icons`를 누르시면, 여러 아이콘을 검색할 수 있습니다.
 ![폰트어섬](/images/blogmaking/fontawesome.png)
 Font Awesome을 사용하기 위해서는 스크립트의 한 조각을 font awesome 관련 요소를 사용하려는 페이지에 넣어야 하는데, TeXt는 테마 차원에서 이걸 미리 해놨습니다. 디자인을 하는데에 약간 더 도움을 받을 수 있을것으로 생각됩니다.
 
@@ -261,7 +261,7 @@ Alert에 넣을 글씨
 ### Tag 기능
 
 `Tag에 넣을 글씨`{:.success}
-<br>사용법
+<br/>사용법
 
 ```markdown
 `Tag에 넣을 글씨`{:.success}
@@ -297,7 +297,7 @@ HTML로 작성하는것은 더 간단합니다. `<a></a>`를 하나 만들고, `
 <a class="button button--primary button--pill" href="">BUTTON</a>
 ```
 
-결과물 : <br>
+결과물 : <br/>
 <a class="button button--primary button--pill" href="">BUTTON</a>
 
 ### Swiper 기능
@@ -312,17 +312,17 @@ plain HTML에선 당연히 이런건 없기 때문에, JS를 페이지 내에 �
 
 ```html
 <div class="swiper swiper-demo">
-    <div class="swiper__wrapper">
-        <div class="swiper__slide">1</div>
-        <div class="swiper__slide">2</div>
-        <div class="swiper__slide">3</div>
-        <div class="swiper__slide">4</div>
-        <div class="swiper__slide">5</div>
-        <div class="swiper__slide">6</div>
-        <div class="swiper__slide">7</div>
-    </div>
-    <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
-    <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
+  <div class="swiper__wrapper">
+    <div class="swiper__slide">1</div>
+    <div class="swiper__slide">2</div>
+    <div class="swiper__slide">3</div>
+    <div class="swiper__slide">4</div>
+    <div class="swiper__slide">5</div>
+    <div class="swiper__slide">6</div>
+    <div class="swiper__slide">7</div>
+  </div>
+  <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
+  <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
 </div>
 ```
 
@@ -330,8 +330,8 @@ plain HTML에선 당연히 이런건 없기 때문에, JS를 페이지 내에 �
 
 ```css
 .swiper__slide {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 ```
 
@@ -586,9 +586,9 @@ $('.swiper-demo').swiper();
 
 이번 포스트 에서는
 
--   테마를 포크해와서
--   Jekyll로 구성된 기본 페이지의 화면을 띄워보고
--   Jekyll과 TeXt 테마의 간단한 기본적인 기능에 대해서 알아보았습니다.
+- 테마를 포크해와서
+- Jekyll로 구성된 기본 페이지의 화면을 띄워보고
+- Jekyll과 TeXt 테마의 간단한 기본적인 기능에 대해서 알아보았습니다.
 
 다음 포스트 에서는 **블로그 포스트 화면 내용의 문제점을 개선**해보는 내용을 다뤄보도록 하겠습니다.
 
@@ -618,7 +618,7 @@ $('.swiper-demo').swiper();
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="2" max="16" style="width:80%"></progress><p>2/16</p></div>
 <hr>
 

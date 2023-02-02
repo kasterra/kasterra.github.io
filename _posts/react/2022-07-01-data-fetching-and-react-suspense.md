@@ -467,8 +467,8 @@ React Suspense를 사용하면 비동기 처리를 더욱 선언적으로 할 �
 
 ## 참고한 글
 
-- <https://blog.logrocket.com/react-suspense-data-fetching>
+- [https://blog.logrocket.com/react-suspense-data-fetching](https://blog.logrocket.com/react-suspense-data-fetching)
 
 ## 예제 앱 Repo
 
-- <https://github.com/kasterra/suspense-data-fetching>
+- [https://github.com/kasterra/suspense-data-fetching](https://github.com/kasterra/suspense-data-fetching)

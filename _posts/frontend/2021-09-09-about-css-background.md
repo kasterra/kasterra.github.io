@@ -36,7 +36,7 @@ HTML(또는 pug)과 CSS(또는 scss)만으로 클론 코딩 연습을 하다가,
 </p>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-<i class="fas fa-exclamation-triangle"></i> 주의 : `background-color` 에서는 여러 색을 쓸 수 없습니다!<br>
+<i class="fas fa-exclamation-triangle"></i> 주의 : `background-color` 에서는 여러 색을 쓸 수 없습니다!<br/>
 혹시 색을 반반 쪼개서 넣는 등의 그런 효과들을 원한다면 후에 설명할 `background-image`부분을 참고 바랍니다.
 {:.info}
 
@@ -81,7 +81,7 @@ CSS에서 사용하는 단색을 나타내는 자료형 입니다. 사용 가능
   - 예시 : background-size : 50% 등
 - 두개 값 : 첫번째 값은 이미지 너비, 두번쨰 값은 이미지 높이 **콤마를 넣지 않는다**
 
-<i class="fas fa-question-circle"></i> `background-size`값에 콤마를 넣으면 안되는 이유?<br>
+<i class="fas fa-question-circle"></i> `background-size`값에 콤마를 넣으면 안되는 이유?<br/>
 `background-color`를 제외한 배경 속성에서는, 배경을 여러개 넣을 수 있습니다. 배경 이미지를 여러개 넣었을 때, 각각의 크기를 명시하기 위해서, 콤마로 구분을 해서 사용합니다.
 {:.info}
 
@@ -128,7 +128,7 @@ CSS에서 사용하는 단색을 나타내는 자료형 입니다. 사용 가능
 
 ### scroll vs fixed : 둘의 차이점은?
 
-<https://meyerweb.com/eric/css/edge/complexspiral/demo.html>을 봅시다. 페이지를 위아래로 스크롤해도 암모나이트 그림은 움직이지 않아서, body에 배경을 적용해서 고정해두고, content 부분에는 배경을 좀 투명하게 해서 둔것처럼 보입니다. 하지만, 웹 페이지의 코드를 개발자 도구를 사용해서 해체해 보면, content 부분의 배경 색에는 alpha 값이 적용되어 있지 않아 불투명 하여, 배경이 비쳐 보이지 않습니다. 그럼 어떻게 된걸까요?
+[https://meyerweb.com/eric/css/edge/complexspiral/demo.html](https://meyerweb.com/eric/css/edge/complexspiral/demo.html)을 봅시다. 페이지를 위아래로 스크롤해도 암모나이트 그림은 움직이지 않아서, body에 배경을 적용해서 고정해두고, content 부분에는 배경을 좀 투명하게 해서 둔것처럼 보입니다. 하지만, 웹 페이지의 코드를 개발자 도구를 사용해서 해체해 보면, content 부분의 배경 색에는 alpha 값이 적용되어 있지 않아 불투명 하여, 배경이 비쳐 보이지 않습니다. 그럼 어떻게 된걸까요?
 
 content의 배경에는 body에 그려진 그림과 동일한 그림에, 이미지 자체적으로 색을 덧씌운 그림이 적용되어 있습니다. 그리고 `background-attachment` 속성으로 `fixed`가 적용되어서, 이미지의 기준점이 뷰포트에 맞춰져 있어서, 연속되게 이어져 보이는 것입니다.
 

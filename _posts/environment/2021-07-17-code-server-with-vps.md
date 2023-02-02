@@ -12,12 +12,12 @@ category: environment
 
 하지만, 구름 IDE에도 한계가 있습니다.
 
--   무료 플랜은 성능이 떨어진다. → 물론 유료결제 해서 유료플랜 쓰면 되긴 합니다만, 하술할 이유로 결제할 마음은 별로 안들었습니다.
--   vscode가 아니므로, vscode에 익숙한 저로써는 그 편의기능들이 너무나도 그리웠습니다.
-    -   vscode의 확장 플러그인. prettier, eslint 와 같은것들이 없으니까 많이 아쉽다.
-    -   `pug`와 같은 추가 템플릿 언어를 끌어다 쓰니까, 그런 것들은 코드 포맷팅을 구름 IDE에서 못해준다.
-    -   node.js로 개발하다보니, vscode 특유의 친절함이 그립다. (다른 모듈에서 `export` 함수를 불러오려고 하면 자동으로 윗줄에 `import`가 적절하게 추가되는것 등)
-    -   HTML 코드를 칠 일이 있으면, vscode등 대부분의 텍스트 에디터에서는 `!`을 치면 HTML 틀이 나와주고, `div.classname*3`이런식으로 입력하면 적절하게 만들어 주고 하는 기능이 있는데 구름 IDE에는 없었습니다.
+- 무료 플랜은 성능이 떨어진다. → 물론 유료결제 해서 유료플랜 쓰면 되긴 합니다만, 하술할 이유로 결제할 마음은 별로 안들었습니다.
+- vscode가 아니므로, vscode에 익숙한 저로써는 그 편의기능들이 너무나도 그리웠습니다.
+  - vscode의 확장 플러그인. prettier, eslint 와 같은것들이 없으니까 많이 아쉽다.
+  - `pug`와 같은 추가 템플릿 언어를 끌어다 쓰니까, 그런 것들은 코드 포맷팅을 구름 IDE에서 못해준다.
+  - node.js로 개발하다보니, vscode 특유의 친절함이 그립다. (다른 모듈에서 `export` 함수를 불러오려고 하면 자동으로 윗줄에 `import`가 적절하게 추가되는것 등)
+  - HTML 코드를 칠 일이 있으면, vscode등 대부분의 텍스트 에디터에서는 `!`을 치면 HTML 틀이 나와주고, `div.classname*3`이런식으로 입력하면 적절하게 만들어 주고 하는 기능이 있는데 구름 IDE에는 없었습니다.
 
 사실 이렇게 이유를 써놨지만 vscode를 쓰고 싶다 한마디로 요약이 가능합니다. 여하튼, 저는 저에게 딱 맞는 개인 개발환경을 만들기 위해서 여러 정보들을 찾아봤습니다.
 
@@ -34,7 +34,7 @@ category: environment
 
 물론 본인이 선호하는 다른 서비스가 있다면 그걸 사용하셔도 됩니다. `Amazon lightsail`도 있고, `DigitalOcean`이라던가, `linode`등등 좋은 서비스는 많고, 여기에 적지 않았지만, 수많은 VPS 업체들이 있습니다.
 
-<strong><i class="far fa-pause-circle"></i> 잠깐만요</strong><br>
+<strong><i class="far fa-pause-circle"></i> 잠깐만요</strong><br/>
 혹시 지금 글을 읽고계시는 분이 이 포스트를 보면서 code-server 설치를 따라해 볼 생각이 있으시면, "얘가 `vultr`라는 서비스로 했으니, 나도 그걸로 해볼까? 하고 따라오시지 말고, 다른 옵션들또한 꼭 확인해 보시기 바랍니다. [밑](#code-server-서버에-설치하기)에서 언급하겠지만, 몇몇 VPS업체들을 선택한다면 설치 과정을 좀 더 간단히 할 수도 있거든요
 {:.info}
 
@@ -42,10 +42,10 @@ category: environment
 
 # 준비물
 
--   code-server를 실행할 수 있는 인터넷에 연결된 서버 (제 경우에는 vultr VPS를 사용했습니다.)
-    -   최소 1GB램에 2CPU 자세한 사항은 [공식 DOCS](https://github.com/cdr/code-server/blob/main/docs/requirements.md)참조
-    -   해당 서버에 대한 root 권한
--   HTTPS를 사용할 것이므로, 개인 용도로 쓸 수 있는 도메인
+- code-server를 실행할 수 있는 인터넷에 연결된 서버 (제 경우에는 vultr VPS를 사용했습니다.)
+  - 최소 1GB램에 2CPU 자세한 사항은 [공식 DOCS](https://github.com/cdr/code-server/blob/main/docs/requirements.md)참조
+  - 해당 서버에 대한 root 권한
+- HTTPS를 사용할 것이므로, 개인 용도로 쓸 수 있는 도메인
 
 이거면 충분합니다. 몇몇 지식이 있으면 좋겠지만, 필요한 지식은 얼마 되지 않기 때문에 이 포스팅에서 다 다루기에 충분한 양입니다.
 
@@ -76,7 +76,7 @@ yarn global add code-server #설치
 code-server #실행
 ```
 
-<strong><i class="fas fa-exclamation-triangle"></i> 잠깐만요</strong> <br>
+<strong><i class="fas fa-exclamation-triangle"></i> 잠깐만요</strong> <br/>
 이 상태에서는 바로 접속을 해봐도 되지 않을것 입니다. 이유는 기본 `bind-address`가 `127.0.0.1:8080`으로 되어 있는데, `127.0.0.1` 다른 말로 `localhost`라는 주소는, **같은 기기에서만 접근이 가능** 합니다. VPS등의 서버에 접근할때는 `ssh` 등의 원격접속 프로토콜로 연결하므로 안되는것은 어찌보면 당연합니다. 그러므로 `bind-adress`를 `0.0.0.0`으로 수정하면 됩니다.
 {:.warning}
 

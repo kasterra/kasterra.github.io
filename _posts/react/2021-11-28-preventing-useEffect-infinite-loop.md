@@ -213,7 +213,7 @@ function CountSecrets() {
 
 # 참고 자료
 
-- <https://ko.reactjs.org/docs/react-component.html>
-- <https://usehooks.com/useWindowSize/>
-- <https://krpeppermint100.medium.com/js-useeffect%EB%A5%BC-%ED%86%B5%ED%95%9C-react-hooks%EC%9D%98-lifecycle-%EA%B4%80%EB%A6%AC-3a65844bcaf8>
-- <https://dmitripavlutin.com/react-useeffect-infinite-loop/>
+- [https://ko.reactjs.org/docs/react-component.html](https://ko.reactjs.org/docs/react-component.html)
+- [https://usehooks.com/useWindowSize/](https://usehooks.com/useWindowSize/)
+- [https://krpeppermint100.medium.com/js-useeffect%EB%A5%BC-%ED%86%B5%ED%95%9C-react-hooks%EC%9D%98-lifecycle-%EA%B4%80%EB%A6%AC-3a65844bcaf8](https://krpeppermint100.medium.com/js-useeffect%EB%A5%BC-%ED%86%B5%ED%95%9C-react-hooks%EC%9D%98-lifecycle-%EA%B4%80%EB%A6%AC-3a65844bcaf8)
+- [https://dmitripavlutin.com/react-useeffect-infinite-loop/](https://dmitripavlutin.com/react-useeffect-infinite-loop/)

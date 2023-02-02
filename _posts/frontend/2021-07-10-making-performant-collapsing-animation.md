@@ -18,11 +18,11 @@ image: /images/thumbnails/CSSJS.png
 
 ```css
 .content {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
 ```
 
@@ -33,15 +33,15 @@ image: /images/thumbnails/CSSJS.png
 사이트를 렌더링 하는데는 크게 다섯가지 핵심 파이프라인을 거칩니다.
 
 1. JS/CSS로 인한 스타일 수정
-    - 바닐라 자바스크립트나 CSS 애니메이션에 의해서 스타일이 수정됩니다. 자바스크립트의 이벤트 리스너라던지, CSS의 pseudo selector 라던지 알잖아요.
+   - 바닐라 자바스크립트나 CSS 애니메이션에 의해서 스타일이 수정됩니다. 자바스크립트의 이벤트 리스너라던지, CSS의 pseudo selector 라던지 알잖아요.
 2. 스타일 계산
-    - CSS 스타일시트를 훑으면서, 해당 요소에 들어갈 스타일 요소를 검사하고, 최종적으로 어떤 스타일 요소를 반영할 것인지 판별하는 단계입니다.
+   - CSS 스타일시트를 훑으면서, 해당 요소에 들어갈 스타일 요소를 검사하고, 최종적으로 어떤 스타일 요소를 반영할 것인지 판별하는 단계입니다.
 3. 레이아웃
-    - 브라우저가 해당 요소가 화면에 얼만큼의 공간을 차지할지 등의 레이아웃을 계산합니다. 한 요소의 크기가 다른 요소의 배치에 영향을 끼칠 수 있을 경우가 있기 때문에, 이러한 단계를 거친다고 생각하면 됩니다.
+   - 브라우저가 해당 요소가 화면에 얼만큼의 공간을 차지할지 등의 레이아웃을 계산합니다. 한 요소의 크기가 다른 요소의 배치에 영향을 끼칠 수 있을 경우가 있기 때문에, 이러한 단계를 거친다고 생각하면 됩니다.
 4. 페인트
-    - 레이아웃이 완료되었으니, 실제로 화면에 그리는 작업입니다. 이 단계에서, 그림자 표현 등 **시각적인 요소**들이 이떄 처리되며, 여러 레이어에서 진행합니다.
+   - 레이아웃이 완료되었으니, 실제로 화면에 그리는 작업입니다. 이 단계에서, 그림자 표현 등 **시각적인 요소**들이 이떄 처리되며, 여러 레이어에서 진행합니다.
 5. 합성
-    - 여러 레이어들을 순서에 맞게 배치해서 최종적인 화면을 그리는 작업입니다.
+   - 여러 레이어들을 순서에 맞게 배치해서 최종적인 화면을 그리는 작업입니다.
 
 요소의 스타일 값이 바뀔 때, 이 모든 과정을 다 실행하지 않습니다. 각 스타일 요소에 따라서, 어떤 파이프라인을 실행할 수도 있고, 하지 않을수도 있습니다. 당연히 이러한 차이들은, 렌더링 속도의 차이를 만들게 되어서, 요소의 스타일을 반복적으로 수정하는 애니메이션의 성능을 결정하는데에 중대한 영향을 미친다고 생각할 수 있습니다. 각 요소가 렌더링 될 때, 어떤 파이프라인을 거치는지 확인하려면 [CSS 트리거](https://csstriggers.com/)를 참고해서 보면 됩니다. `height`나 `max-height`등의 기하학적 요소들은 레이아웃, 페인트, 합성의 모든 과정을 거치게 되어서, 60fps의 애니메이션을 만들기 어렵고, 또 컴퓨터의 더 많은 연산을 필요로 합니다.
 
@@ -118,15 +118,15 @@ JS 코드로 크기를 계산한다면 아래와 같겠죠
 
 ```js
 function calculateCollapsedScale() {
-    // 메뉴 타이틀 부분만 접혀졌을때 보이도록
-    const collapsed = menuTitle.getBoundingClientRect();
+  // 메뉴 타이틀 부분만 접혀졌을때 보이도록
+  const collapsed = menuTitle.getBoundingClientRect();
 
-    // 확장되었을때는 메뉴 전체가 보이도록 해야하기 때문
-    const expanded = menu.getBoundingClientRect();
-    return {
-        x: collapsed.width / expanded.width,
-        y: collapsed.height / expanded.height,
-    };
+  // 확장되었을때는 메뉴 전체가 보이도록 해야하기 때문
+  const expanded = menu.getBoundingClientRect();
+  return {
+    x: collapsed.width / expanded.width,
+    y: collapsed.height / expanded.height,
+  };
 }
 ```
 
@@ -150,32 +150,32 @@ function calculateCollapsedScale() {
 
 ```js
 function createKeyframeAnimation() {
-    // 접혀졌을때의 요소의 크기를 알아낸다.
-    let { x, y } = calculateCollapsedScale();
-    let animation = "";
-    let inverseAnimation = "";
+  // 접혀졌을때의 요소의 크기를 알아낸다.
+  let { x, y } = calculateCollapsedScale();
+  let animation = "";
+  let inverseAnimation = "";
 
-    for (let step = 0; step <= 100; step++) {
-        //각 step을 easing 시켜서 적용한다.
-        let easedStep = ease(step / 100);
+  for (let step = 0; step <= 100; step++) {
+    //각 step을 easing 시켜서 적용한다.
+    let easedStep = ease(step / 100);
 
-        // 해당 step에서 요소의 scale을 계산한다.
-        const xScale = x + (1 - x) * easedStep;
-        const yScale = y + (1 - y) * easedStep;
+    // 해당 step에서 요소의 scale을 계산한다.
+    const xScale = x + (1 - x) * easedStep;
+    const yScale = y + (1 - y) * easedStep;
 
-        animation += `${step}% {
+    animation += `${step}% {
       transform: scale(${xScale}, ${yScale});
     }`;
 
-        // 내용물 부분은 해당 비율의 역수만큼의 배율을 적용
-        const invXScale = 1 / xScale;
-        const invYScale = 1 / yScale;
-        inverseAnimation += `${step}% {
+    // 내용물 부분은 해당 비율의 역수만큼의 배율을 적용
+    const invXScale = 1 / xScale;
+    const invYScale = 1 / yScale;
+    inverseAnimation += `${step}% {
       transform: scale(${invXScale}, ${invYScale});
     }`;
-    }
+  }
 
-    return `
+  return `
   @keyframes menuAnimation {
     ${animation}
   }
@@ -194,15 +194,15 @@ function createKeyframeAnimation() {
 
 ```css
 .menu--expanded {
-    animation-name: menuAnimation;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
+  animation-name: menuAnimation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
 }
 
 .menu__contents--expanded {
-    animation-name: menuContentsAnimation;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
+  animation-name: menuContentsAnimation;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
 }
 ```
 
@@ -231,4 +231,4 @@ function createKeyframeAnimation() {
 window.getComputedStyle(this._menu).transform;
 ```
 
-는 없애니까 더 성능이 좋아지던데... <https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing?hl=ko%5D> 이걸 참고해 보면, 어느 레이아웃에 관하여 쿼리를 던질 떄, 예전에 캐싱 해놓은 값이 유효하지 않을 가능성이 있다면 (이를테면 다른 스타일 변경이 있다거나) 하면 다시 스타일의 값을 계산해야 해서 계산한다고 병목현상의 원인이 될 수 있다고 합니다. 주석의 내용으로는 클래스를 `take-hold` 하기위해 (영어사전에 찾아보니, 뿌리를 내리다, 보존하다 정도의 뜻이 있던데)라고 되어 있던데, 이걸 왜 넣은지는 모르겠습니다. 우선 다른것은 잘 모르겠지만, 렌더링 속도의 측면에서는 이 코드를 빼는게 맞는것 같아서, 저는 제거를 해서 위에 적용하였습니다.
+는 없애니까 더 성능이 좋아지던데... [https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing?hl=ko%5D](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing?hl=ko%5D) 이걸 참고해 보면, 어느 레이아웃에 관하여 쿼리를 던질 떄, 예전에 캐싱 해놓은 값이 유효하지 않을 가능성이 있다면 (이를테면 다른 스타일 변경이 있다거나) 하면 다시 스타일의 값을 계산해야 해서 계산한다고 병목현상의 원인이 될 수 있다고 합니다. 주석의 내용으로는 클래스를 `take-hold` 하기위해 (영어사전에 찾아보니, 뿌리를 내리다, 보존하다 정도의 뜻이 있던데)라고 되어 있던데, 이걸 왜 넣은지는 모르겠습니다. 우선 다른것은 잘 모르겠지만, 렌더링 속도의 측면에서는 이 코드를 빼는게 맞는것 같아서, 저는 제거를 해서 위에 적용하였습니다.

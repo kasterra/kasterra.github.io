@@ -7,7 +7,7 @@ image: /images/thumbnails/HTMLJS.png
 ---
 
 <p class="info">
-<strong><i class="fas fa-info-circle"></i> 정보</strong><br>
+<strong><i class="fas fa-info-circle"></i> 정보</strong><br/>
 <span>본 게시물은, <a href="https://dev.opera.com/">dev.opera.com</a>에 올라와있는 <a href="https://dev.opera.com/authors/simon-pieters/">Simon pieters</a>님의
 <a href="https://dev.opera.com/articles/consistent-event-firing-with-html5-video/">게시글</a>을 번역한 내용을 포함하고 있습니다.
 이 게시물은 CC-BY-NC-SA 3.0으로 배포됩니다.<img src="/images/ccl/by-nc-sa.svg" style="margin:0 0 0 auto;"></span>
@@ -28,10 +28,10 @@ HTML5 에 있는 `<video>` 속성을 활용해서 JS로 이것저것을 제어�
 ```html
 <video src="test.webm" id="video"></video>
 <script>
-    var video = document.getElementById("video");
-    video.onloadedmetadata = function (e) {
-        alert("Got loadedmetadata!");
-    };
+  var video = document.getElementById("video");
+  video.onloadedmetadata = function (e) {
+    alert("Got loadedmetadata!");
+  };
 </script>
 ```
 
@@ -63,12 +63,12 @@ HTML5 에 있는 `<video>` 속성을 활용해서 JS로 이것저것을 제어�
 
 ```html
 <script>
-    var video = document.createElement("video");
-    video.onloadedmetadata = function (e) {
-        alert("Got loadedmetadata!");
-    };
-    video.src = "test.webm";
-    document.body.appendChild(video);
+  var video = document.createElement("video");
+  video.onloadedmetadata = function (e) {
+    alert("Got loadedmetadata!");
+  };
+  video.src = "test.webm";
+  document.body.appendChild(video);
 </script>
 ```
 
@@ -82,27 +82,29 @@ javascript를 inline으로 쓰기 싫거나, JS가 로딩될 동안, 사용자�
 
 ```html
 <head>
-    <script>
-        window.addEventListener(
-            "loadedmetadata",
-            function (e) {
-                alert("Got loadedmetadata!");
-            },
-            true
-        );
-    </script>
+  <script>
+    window.addEventListener(
+      "loadedmetadata",
+      function (e) {
+        alert("Got loadedmetadata!");
+      },
+      true
+    );
+  </script>
 </head>
 <body>
-    <video src="test.webm"></video>
+  <video src="test.webm"></video>
 </body>
 ```
+
 여기서는 단순히 `alert` 창을 하나 띄우는것으로 그쳤고, 하위 요소가 `<vided>`하나 밖에 존재하지 않아서 딱히 문제가 되지 않지만, 여러 미디어 요소가 있고, 그 요소들이 로딩이 될 때마다 `loadedmetadata` 이벤트가 발상할 것입니다.
 
 우리가 원하는 이벤트만 잡아서 처리를 하기 위해서는, event listener의 매개변수인 `e` 에서 이벤트가 생긴 대상을 알려주는`e.target`을 논리적으로 판별해서, 우리가 원하는 요소의 이벤트만 처리를 할 수 있겠습니다.
 
 # 참고 할만한 글
-<https://ko.javascript.info/bubbling-and-capturing> : 위에서 링크로도 간략히 언급한 이벤트 버블링과 캡처링에 관한 글
 
-<https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/> : 또 다른 이벤트 버블링과 캡처링에 관한 글.  조금 더 읽기 쉬운 문체로 되어 있고, 이를 활용한 예시인 이벤트 위임 패턴에 대해서도 다루고 있다.
+[https://ko.javascript.info/bubbling-and-capturing](https://ko.javascript.info/bubbling-and-capturing) : 위에서 링크로도 간략히 언급한 이벤트 버블링과 캡처링에 관한 글
+
+[https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/) : 또 다른 이벤트 버블링과 캡처링에 관한 글. 조금 더 읽기 쉬운 문체로 되어 있고, 이를 활용한 예시인 이벤트 위임 패턴에 대해서도 다루고 있다.
 
 끝까지 읽어주셔서 감사합니다.

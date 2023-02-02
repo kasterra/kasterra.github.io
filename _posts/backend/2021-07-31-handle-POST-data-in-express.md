@@ -37,7 +37,7 @@ http request body에 담겨저 오는 payload의 종류는 여러가지가 있�
 2. MIME 타입이란? : 웹에서 전송되는 문서의 종류를 명시하는 방법. `text/plain` `application/json` 등등이 있다. [mdn 링크](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 3. 압축된 body? : 웹페이지의 속도를 올리기 위해서, 브라우저와 서버에서 자원들을 압축해서 주고받는 경우가 있습니다. HTTP에서의 압축에 대한 이야기는 [mdn 링크 참조](https://developer.mozilla.org/ko/docs/Web/HTTP/Compression)
 
-`req.body`의 형태는 사용자가 만든 입력에 기반하기에, 해당 오브젝트의 값과 속성은 바로 신뢰할 수 없으며, 그 전에 검증할 필요가 있습니다. 예를 들어서 `req.body.foo.toString()`은 여러 이유로 인해서 작동하지 않을 수 있습니다.<br><br>
+`req.body`의 형태는 사용자가 만든 입력에 기반하기에, 해당 오브젝트의 값과 속성은 바로 신뢰할 수 없으며, 그 전에 검증할 필요가 있습니다. 예를 들어서 `req.body.foo.toString()`은 여러 이유로 인해서 작동하지 않을 수 있습니다.<br/><br/>
 해당 `foo`가 존재하지 않을수도 있고, `.toString`이 함수가 아닐수도 있는 것이죠. 그래서 아래에 설명할 여러 메소드들에서는 검증에 관한 속성이 들어있습니다. 꼭 명심하세요.
 {:.warning}
 
@@ -55,25 +55,25 @@ http request body에 담겨저 오는 payload의 종류는 여러가지가 있�
     <tbody>
         <tr>
             <td><code class="language-plaintext highlighter-rouge">inflate</code></td>
-            <td>압축된 body를 처리할지에 대한 여부를 결정합니다. <br>비활성화 되었을 시(false로 설정) 압축된 body는 미들웨어에서 거부됩니다.</td>
+            <td>압축된 body를 처리할지에 대한 여부를 결정합니다. <br/>비활성화 되었을 시(false로 설정) 압축된 body는 미들웨어에서 거부됩니다.</td>
             <td><code class="language-plaintext highlighter-rouge">Boolean</code></td>
             <td><code class="language-plaintext highlighter-rouge">true</code></td>
         </tr>
         <tr>
             <td><code class="language-plaintext highlighter-rouge">limit</code></td>
-            <td>request body의 사이즈의 상한을 결정합니다.<br> 숫자로 입력이 되면, 상한값은 입력한 숫자만큼의 바이트로 설정이 되고, <br>문자열이면, <a href="https://www.npmjs.com/package/bytes">bytes 라이브러리</a>를 통해 파싱되어, 용량의 상한을 결정합니다</td>
+            <td>request body의 사이즈의 상한을 결정합니다.<br/> 숫자로 입력이 되면, 상한값은 입력한 숫자만큼의 바이트로 설정이 되고, <br/>문자열이면, <a href="https://www.npmjs.com/package/bytes">bytes 라이브러리</a>를 통해 파싱되어, 용량의 상한을 결정합니다</td>
             <td>mixed(numbers 또는 string)</td>
             <td><code class="language-plaintext highlighter-rouge">"100kb"</code></td>
         </tr>
         <tr>
             <td><code class="language-plaintext highlighter-rouge">type</code></td>
-            <td>미들웨어가 어떤 타일을 처리할 것인지를 지정해 줍니다. 문자열, 문자열의 배열, 함수 중 하나로 사용합니다.<br> 함수가 아니면, <a href="(https://www.npmjs.org/package/type-is">type-is 라이브러리</a>를 통해서, 확장자 명인지(예시 : .bin) MIME 타입명인지(예시 : text/plain), 와일드카드를 사용한 MIME 파일 명인지, (예시 : text / *)를 확인해서 반영합니다.<br>함수라면 <code class="language-plaintext highlighter-rouge">type</code> 옵션은 <code class="language-plaintext highlighter-rouge">fn(req)</code>로 호출되어, 참으로 해석될 수 있는 값(truthy value)이 반환되면 파싱 됩니다.</td>
+            <td>미들웨어가 어떤 타일을 처리할 것인지를 지정해 줍니다. 문자열, 문자열의 배열, 함수 중 하나로 사용합니다.<br/> 함수가 아니면, <a href="(https://www.npmjs.org/package/type-is">type-is 라이브러리</a>를 통해서, 확장자 명인지(예시 : .bin) MIME 타입명인지(예시 : text/plain), 와일드카드를 사용한 MIME 파일 명인지, (예시 : text / *)를 확인해서 반영합니다.<br/>함수라면 <code class="language-plaintext highlighter-rouge">type</code> 옵션은 <code class="language-plaintext highlighter-rouge">fn(req)</code>로 호출되어, 참으로 해석될 수 있는 값(truthy value)이 반환되면 파싱 됩니다.</td>
             <td>Mixed(문자열, 문자열 배열, 함수)</td>
             <td>각 메소드 별로 상이</td>
         </tr>
         <tr>
             <td><code class="language-plaintext highlighter-rouge">verify</code></td>
-            <td>해당 옵션이 제공되면, <code class="language-plaintext highlighter-rouge">verify(req,res,buf,encoding)</code>형태로 함수가 호출 됩니다. <br><code class="language-plaintext highlighter-rouge">buf</code>는 해당 raw request body의 Buffer이고, <code class="language-plaintext highlighter-rouge">encoding</code>은 http 요청의 인코딩 입니다. 이 단계에서 에러가 나면 파싱이 종료될 수 있습니다.</td>
+            <td>해당 옵션이 제공되면, <code class="language-plaintext highlighter-rouge">verify(req,res,buf,encoding)</code>형태로 함수가 호출 됩니다. <br/><code class="language-plaintext highlighter-rouge">buf</code>는 해당 raw request body의 Buffer이고, <code class="language-plaintext highlighter-rouge">encoding</code>은 http 요청의 인코딩 입니다. 이 단계에서 에러가 나면 파싱이 종료될 수 있습니다.</td>
             <td>Function</td>
             <td><code class="language-plaintext highlighter-rouge">undefined</code></td>
         </tr>
@@ -106,7 +106,7 @@ http request body에 담겨저 오는 payload의 종류는 여러가지가 있�
       </tr>
       <tr>
          <td><code class="language-plaintext highlighter-rouge">reviver</code></td>
-         <td><code class="language-plaintext highlighter-rouge">JSON.parse()</code>의 두번째 인자로 전달됩니다. <code class="language-plaintext highlighter-rouge">JSON.parse()</code>의 두번째 인자에는 값을 반환하기 전에 가공하는 함수가 들어갑니다. <br>자세한 사항은 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">mdn 링크 참조</a></td>
+         <td><code class="language-plaintext highlighter-rouge">JSON.parse()</code>의 두번째 인자로 전달됩니다. <code class="language-plaintext highlighter-rouge">JSON.parse()</code>의 두번째 인자에는 값을 반환하기 전에 가공하는 함수가 들어갑니다. <br/>자세한 사항은 <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">mdn 링크 참조</a></td>
          <td>Function</td>
          <td><code class="language-plaintext highlighter-rouge">null</code></td>
       </tr>
@@ -125,16 +125,16 @@ http request body에 담겨저 오는 payload의 종류는 여러가지가 있�
 
 ```javascript
 fetch("/", {
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    user: {
+      name: "John",
+      email: "john@example.com",
     },
-    body: JSON.stringify({
-        user: {
-            name: "John",
-            email: "john@example.com",
-        },
-    }),
+  }),
 });
 ```
 
@@ -143,8 +143,8 @@ fetch("/", {
 ```javascript
 app.use(express.json());
 app.post("/", function (request, response) {
-    console.log(request.body.user.name);
-    console.log(request.body.user.email);
+  console.log(request.body.user.name);
+  console.log(request.body.user.email);
 });
 ```
 
@@ -154,8 +154,8 @@ app.post("/", function (request, response) {
 
 미들웨어로 처리되고 난 다음의 새로운 `body` 객체 내에는 `request` 객체 내에서 파싱 된 데이터들이 들어있을 것입니다. 만약에 파싱할 데이터가 없거나, `Content-type`이 일치하지 않거나 에러가 난다면 `body`객체는 빈 객체가 될 것입니다.
 
-<i class="far fa-question-circle"></i> `urlencoded`이 무엇인가요?<br>
-HTML `<form>`에서는 `enctype` 속성을 통해서, 여러가지 방법으로 form을 서버에 제출할 수 있도록 합니다. 기본적으로 `enctype`을 명시하지 않았을때는 `application/x-www-form-urlencoded`로 보내지며, 이는 '&'으로 분리되고 '='으로 키와 값을 연결하는 구조입니다.<br>
+<i class="far fa-question-circle"></i> `urlencoded`이 무엇인가요?<br/>
+HTML `<form>`에서는 `enctype` 속성을 통해서, 여러가지 방법으로 form을 서버에 제출할 수 있도록 합니다. 기본적으로 `enctype`을 명시하지 않았을때는 `application/x-www-form-urlencoded`로 보내지며, 이는 '&'으로 분리되고 '='으로 키와 값을 연결하는 구조입니다.<br/>
 자세한 사항은 [mdn 링크](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods/POST)를 참조해 주세요.
 {:.info}
 하단의 표는 `express.urlencoded()`에만 해당하는 옵션입니다. 위에서 명시한 표에 해당하는 내용에 덧붙여 보시면 됩니다.
@@ -178,8 +178,8 @@ HTML `<form>`에서는 `enctype` 속성을 통해서, 여러가지 방법으로 
       </tr>
       <tr>
          <td><code class="language-plaintext highlighter-rouge">extended</code></td>
-         <td>해당 옵션에서는 URL-인코딩 된 데이터를 <code class="language-plaintext highlighter-rogue">querystring</code> 라이브러리를 통해서 파싱할지(<code class="language-plaintext highlighter-rogue">false</code>일때 적용) <code class="language-plaintext highlighter-rogue">qs</code> 라이브러리를 통해서 파싱할지(<code class="language-plaintext highlighter-rogue">true</code>일때 적용) 결정합니다.<br>
-         "extended"가 의미하는 바는, 더 풍부한 문법을 사용할 수 있게 <strong>확장되었다</strong> 라는 의미입니다. nested 된 형태들을 사용할 수 있는 등, 더욱 많은 문법을 지원합니다.<br>
+         <td>해당 옵션에서는 URL-인코딩 된 데이터를 <code class="language-plaintext highlighter-rogue">querystring</code> 라이브러리를 통해서 파싱할지(<code class="language-plaintext highlighter-rogue">false</code>일때 적용) <code class="language-plaintext highlighter-rogue">qs</code> 라이브러리를 통해서 파싱할지(<code class="language-plaintext highlighter-rogue">true</code>일때 적용) 결정합니다.<br/>
+         "extended"가 의미하는 바는, 더 풍부한 문법을 사용할 수 있게 <strong>확장되었다</strong> 라는 의미입니다. nested 된 형태들을 사용할 수 있는 등, 더욱 많은 문법을 지원합니다.<br/>
          자세한 사항은 <a href="https://stackoverflow.com/questions/29960764/what-does-extended-mean-in-express-4-0/45690436#45690436">stack overflow 게시글 참조</a>
          </td>
          <td>Boolean</td>
@@ -200,9 +200,9 @@ HTML `<form>`에서는 `enctype` 속성을 통해서, 여러가지 방법으로 
 
 ```html
 <form method="post" action="/">
-    <input type="text" name="user[name]" />
-    <input type="text" name="user[email]" />
-    <input type="submit" value="Submit" />
+  <input type="text" name="user[name]" />
+  <input type="text" name="user[email]" />
+  <input type="submit" value="Submit" />
 </form>
 ```
 
@@ -211,8 +211,8 @@ HTML `<form>`에서는 `enctype` 속성을 통해서, 여러가지 방법으로 
 ```javascript
 app.use(express.urlencoded());
 app.post("/", function (request, response) {
-    console.log(request.body.user.name);
-    console.log(request.body.user.email);
+  console.log(request.body.user.name);
+  console.log(request.body.user.email);
 });
 ```
 
@@ -256,8 +256,8 @@ app.post("/", function (request, response) {
 
 미들웨어로 처리되고 난 다음의 새로운 `body` 객체 내에는 `request` 객체 내에서 파싱 된 데이터들이 들어있을 것입니다. 만약에 파싱할 데이터가 없거나, `Content-type`이 일치하지 않거나 에러가 난다면 `body`객체는 빈 객체가 될 것입니다.
 
-<i class="far fa-question-circle"></i> `application/octet-stream`은 언제 쓰나요?<br>
-RFC 2046에서 명시된 바로는 `application/octet-steam`은 임의의 2진 파일을 의미합니다. 대충 웹 요소가 아닌 무언가 정도로 해석하면 됩니다. 이게 언제 쓰이는지는 찾아봐도 잘 모르겠습니다.<br>
+<i class="far fa-question-circle"></i> `application/octet-stream`은 언제 쓰나요?<br/>
+RFC 2046에서 명시된 바로는 `application/octet-steam`은 임의의 2진 파일을 의미합니다. 대충 웹 요소가 아닌 무언가 정도로 해석하면 됩니다. 이게 언제 쓰이는지는 찾아봐도 잘 모르겠습니다.<br/>
 일단 브라우저 쪽에서 해당 헤더를 가진 HTTP POST를 수신했을 때, 파일을 다운로드 하는 창을 띄운다고 합니다. <a href="https://stackoverflow.com/questions/20508788/do-i-need-content-type-application-octet-stream-for-file-download">stack overflow 링크</a>
 {:.info}
 

@@ -1,6 +1,6 @@
 ---
 title: code-server에 AI 코딩 도우미 tabnine 설치기
-tags: 
+tags:
 layout: post
 subtitle: github Copilot의 경쟁자이기도 한 AI 자동완성기 tabnine을 한번 설치하고 설정까지 해봅시다.
 image: /images/thumbnails/tabnine%20vscode.png
@@ -52,7 +52,7 @@ tabnine을 설치하는 방법은 Extension 탭에서 tabnine을 검색해서 �
 
 Pro의 기능을 사용하려면, 일반적으로는 결제를 해야 하지만, 위에서도 간략하게 언급했듯, 학생임을 증명하면 무료로 쓸 수 있습니다.
 
-<https://www.tabnine.com/students>에서 본인의 학교 이메일을 입력하고, vscode 하단의 tabnine 탭을 클릭해서, 아까 입력한 학교 이메일로 가입을 진행하면 된다.... 라는 것이었는데, 제 경우에는 아래 이미지와 같은 문제가 발생했습니다.
+[https://www.tabnine.com/students](https://www.tabnine.com/students)에서 본인의 학교 이메일을 입력하고, vscode 하단의 tabnine 탭을 클릭해서, 아까 입력한 학교 이메일로 가입을 진행하면 된다.... 라는 것이었는데, 제 경우에는 아래 이미지와 같은 문제가 발생했습니다.
 
 ![recjected](/images/environment/rejected127.png)
 

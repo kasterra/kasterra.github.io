@@ -18,8 +18,8 @@ tags: HTML enctype
 
 ```html
 <form method="POST" , action="" , enctype="multipart/form-data">
-    <label for="myfile">Choose A file to Upload</label>
-    <input type="file" id="myfile" />
+  <label for="myfile">Choose A file to Upload</label>
+  <input type="file" id="myfile" />
 </form>
 ```
 
@@ -29,7 +29,7 @@ tags: HTML enctype
 
 # 1. enctype이 뭐야?
 
-처음 든 궁금증은 이것 이었습니다. 위의 HTML코드에서 `<form>`도 알고있고, `<form>`의 `method`속성도 알고 있습니다. `POST`, `GET`, `PUT` 등을 쓸 수 있는것이라는것은, 간단한 웹 공부를 하신 분이라면 누구든지 알만한 간단한 것이죠. 하지만, 제가 HTML을 노마드코더 강의로 공부했을때는, `enctype`에 관한 언급은 딱히 없었기 떄문에, 가장 먼저 든 의문이 이것이었습니다. 노마드 코더의 1타강사 니꼴라스의 가르침대로, HTML에서 모르는게 생긴 저는 mdn을 뒤적거리다가 이런 mdn 문서를 발견했습니다. <https://developer.mozilla.org/ko/docs/Web/HTTP/Methods/POST>
+처음 든 궁금증은 이것 이었습니다. 위의 HTML코드에서 `<form>`도 알고있고, `<form>`의 `method`속성도 알고 있습니다. `POST`, `GET`, `PUT` 등을 쓸 수 있는것이라는것은, 간단한 웹 공부를 하신 분이라면 누구든지 알만한 간단한 것이죠. 하지만, 제가 HTML을 노마드코더 강의로 공부했을때는, `enctype`에 관한 언급은 딱히 없었기 떄문에, 가장 먼저 든 의문이 이것이었습니다. 노마드 코더의 1타강사 니꼴라스의 가르침대로, HTML에서 모르는게 생긴 저는 mdn을 뒤적거리다가 이런 [mdn 문서](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods/POST)를 발견했습니다.
 
 HTML5에서 `enctype`은 총 세가지가 있다고 합니다.
 
@@ -50,14 +50,14 @@ HTML5에서 `enctype`은 총 세가지가 있다고 합니다.
 우선 첫번째 궁금증인 multipart에 대한 정의부터 입니다.
 
 multipart란 말 그대로, 하나, 또는 하나 이상의 **다른 타입의 데이터**들이 하나의 body에 결합된 형태 입니다.
-<br> 자세한 설명은 <https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html> 참조
+<br/> 자세한 설명은 [https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) 참조
 {:.info}
 
-이 stack overflow의 답변들에 딸려있는 w3.org의 관련 문서를 읽고나서, 저는 저의 궁금증을 다 풀었던것 같습니다. 
+이 stack overflow의 답변들에 딸려있는 w3.org의 관련 문서를 읽고나서, 저는 저의 궁금증을 다 풀었던것 같습니다.
 
-<https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html>
+[https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)
 
-<https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2>
+[https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2](https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2)
 
 이 두개의 문서인데, 이걸 다 번역하기에는 지금의 지식 수준이 충분치 않아서, 올바른 번역이 나오지 않을것 같아서, 쉬이 번역을 하지 못하겠습니다. (RFC 프로토콜에 관한 이야기도 중간중간 나와서 겁먹은것도 있고요).
 

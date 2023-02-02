@@ -39,7 +39,7 @@ category: blog
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="6" max="16" style="width:80%"></progress><p>6/16</p></div>
 <hr>
 여하튼, 이제 네번째 대주제를 완성할 시간입니다. 기억하실지 모르겠지만, 이 시리즈의 맨 첫번째 포스팅에서 소개한 블로그의 모습과, 지금 우리가 보는 `github.io` 블로그와는 많이 차이가 있습니다.
@@ -119,8 +119,8 @@ layout: home
 layout: home
 mode: immersive
 article_header:
-    type: overlay
-    theme: dark
+  type: overlay
+  theme: dark
 background_color: "#7cc7bb"
 show_title: true
 title: 카스테라의 공부방
@@ -133,11 +133,11 @@ excerpt: 이 블로그는 알고리즘, PS, 웹개발 이야기를 다룹니다
 
 ```css
 .overlay {
-    min-height: auto !important;
-    height: 18rem !important;
+  min-height: auto !important;
+  height: 18rem !important;
 }
 h1 {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 ```
 
@@ -199,28 +199,26 @@ content of layout part 1 content of the page content of layout part 1
 'thumbnail'-%} {%- include snippets/get-nav-url.html path=_article.cover -%} {%-
 assign _article_cover = __return -%}
 <div class="item__image">
-    {%- if include.cover_size == 'lg' -%}
-    <img class="image image--lg" src="{{ _article_cover }}" />
-    {%- elsif include.cover_size == 'sm' -%}
-    <img class="image image--sm" src="{{ _article_cover }}" />
-    {%- else -%}
-    <img class="image" src="{{ _article_cover }}" />
-    {%- endif -%}
+  {%- if include.cover_size == 'lg' -%}
+  <img class="image image--lg" src="{{ _article_cover }}" />
+  {%- elsif include.cover_size == 'sm' -%}
+  <img class="image image--sm" src="{{ _article_cover }}" />
+  {%- else -%}
+  <img class="image" src="{{ _article_cover }}" />
+  {%- endif -%}
 </div>
 {%- endif -%}
 <div class="item__content">
-    <header>
-        <a href="{{ _article_url }}">
-            {%- if include.show_cover =='thumbnail' and _article.cover -%}
-            <div class="item__image thumbnail">
-                <img src="{{ _article_cover }}" alt="cover of artilce" />
-            </div>
-            {%- endif -%}
-            <h2 itemprop="headline" class="item__header">
-                {{ _article.title }}
-            </h2>
-        </a>
-    </header>
+  <header>
+    <a href="{{ _article_url }}">
+      {%- if include.show_cover =='thumbnail' and _article.cover -%}
+      <div class="item__image thumbnail">
+        <img src="{{ _article_cover }}" alt="cover of artilce" />
+      </div>
+      {%- endif -%}
+      <h2 itemprop="headline" class="item__header">{{ _article.title }}</h2>
+    </a>
+  </header>
 </div>
 ```
 
@@ -285,7 +283,7 @@ assign _article_cover = __return -%}
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="8" max="16" style="width:80%"></progress><p>8/16</p></div>
 <hr>
 드디어 절반에 도달했습니다.
@@ -324,25 +322,25 @@ assign _article_cover = __return -%}
 
 ```scss
 .header__brand {
-    @include flexbox();
-    @include align-items(center);
-    & > svg {
-        width: map-get($base, font-size-h4) * 3;
-        height: map-get($base, font-size-h4) * 3;
-        margin-right: map-get($spacers, 3);
-        vertical-align: middle;
-        @include media-breakpoint-down(md) {
-            width: map-get($base, font-size-h4) * 1.2;
-            height: map-get($base, font-size-h4) * 1.2;
-        }
+  @include flexbox();
+  @include align-items(center);
+  & > svg {
+    width: map-get($base, font-size-h4) * 3;
+    height: map-get($base, font-size-h4) * 3;
+    margin-right: map-get($spacers, 3);
+    vertical-align: middle;
+    @include media-breakpoint-down(md) {
+      width: map-get($base, font-size-h4) * 1.2;
+      height: map-get($base, font-size-h4) * 1.2;
     }
-    & > a {
-        display: inline-block;
-        font-size: map-get($base, font-size-h4);
-        @include media-breakpoint-down(md) {
-            font-size: map-get($base, font-size-h4-small);
-        }
+  }
+  & > a {
+    display: inline-block;
+    font-size: map-get($base, font-size-h4);
+    @include media-breakpoint-down(md) {
+      font-size: map-get($base, font-size-h4-small);
     }
+  }
 }
 ```
 
@@ -374,7 +372,7 @@ assign _article_cover = __return -%}
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="9" max="16" style="width:80%"></progress><p>9/16</p></div>
 <hr>
 

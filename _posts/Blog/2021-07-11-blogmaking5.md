@@ -39,7 +39,7 @@ category: blog
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="12" max="16" style="width:80%"></progress><p>12/16</p></div>
 <hr>
 

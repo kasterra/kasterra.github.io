@@ -10,7 +10,7 @@ image: /images/thumbnails/JS.png
 
 express.js로 서버 개발을 해봤다면 '미들웨어' 라는 키워드를 들어 보셨을 겁니다. 중간에 값들을 가로채서 여러 처리들을 할 수 있는 함수 조각들을 의미하는것을 알고 계실겁니다. 그런데 바닐라 JS에서도 이와 비슷하게 연산 중간에 값을 '가로챌' 수 있는 객체가 있다는 것을 알고 계셨나요? 이번 포스팅에서는 그 역할을 하는 Proxy 객체와 그 응용예시들을 살펴볼까 합니다. 생각보다 다양한 일을 할 수 있는것에 아마 깜짝 놀랄지도 모르겠습니다.
 
-이 글은 <https://ko.javascript.info/proxy>의 내용을 참조하여 작성되었습니다.
+이 글은 [https://ko.javascript.info/proxy](https://ko.javascript.info/proxy)의 내용을 참조하여 작성되었습니다.
 
 # `Proxy` 개요
 

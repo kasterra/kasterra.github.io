@@ -37,7 +37,7 @@ category: blog
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="2" max="16" style="width:80%"></progress><p>2/16</p></div>
 <hr>
 
@@ -61,7 +61,7 @@ tags: 태그1 태그2 tag1 tag2
 ```
 
 라는 내용을 글 맨앞에 추가해 줍시다.
-<br>즉 아래와 같은 모습이 나오는 것입니다.
+<br/>즉 아래와 같은 모습이 나오는 것입니다.
 
 ![포스트 하나](/images/blogmaking/testArticle1.png)
 
@@ -92,22 +92,22 @@ $ bundle exec jekyll serve
 # ① : 목차 위젯 안잘리게 하기
 
 첫번째 문제는, 간단한 HTML과 CSS를 안다면, 어차피 정적 웹페이지는 HTML하고 CSS 규칙으로 렌더링 되는거니까, CSS를 좀 바꾸면 되지 않을까? 하는 생각이 듭니다.
-<br><br> 브라우저의 개발자 도구를 사용해서, 우측 사이드의 HTML 코드를 살펴보고, 각 요소별로 스타일링이 어떻게 되있는가를 확인해 봅시다.
+<br/><br/> 브라우저의 개발자 도구를 사용해서, 우측 사이드의 HTML 코드를 살펴보고, 각 요소별로 스타일링이 어떻게 되있는가를 확인해 봅시다.
 
 ```html
 <div class="col-aside d-print-none js-col-aside">
-    <aside class="page__aside js-page-aside" style="left: 0px; top: 0px;">
-        <div class="toc-aside js-toc-root">
-            "대충 리스트 목록. 너무 길어져서 임의로 생략"
-        </div>
-    </aside>
+  <aside class="page__aside js-page-aside" style="left: 0px; top: 0px;">
+    <div class="toc-aside js-toc-root">
+      "대충 리스트 목록. 너무 길어져서 임의로 생략"
+    </div>
+  </aside>
 </div>
 ```
 
 맨 상위 `div`와 `aside`의 너비를 inspect 해보면, 제 화면 기준으로 220px로 되어있고, 이를 개발자 창에서 임의로 `auto`로 수정해본 결과, 글자가 잘리지 않고 잘 나오는 것을 확인했습니다.
 ![인라인수정](/images/blogmaking/inlineEdit1.png)
 빨간색으로 강조 표시한 부분들을 보세요. 문제가 해결된것이 보이죠?
-<br><br>
+<br/><br/>
 크롬의 개발자 도구는 참 편리합니다. 위의 이미지를 보면, 어떠한 스타일이, 어떠한 파일의 몇째줄에서 왔다는것을 보여주고 있습니다. 여기서 알 수 있는 정보는 `_page.scss`라는 파일의 27번째 줄에서 이 서식을 적용했다는 사실입니다. 그렇다면, 우리의 블로그 파일을 뒤져서 `_page.scss` 파일의 해당 내용을 찾으면 이 문제를 해결할 수 있겠네요! `visual studio code`의 편리한 기능을 한번 써봅시다. `Ctrl+p` 단축키를 vscode 상에서 입력하면, 열려있는 폴더 내에서 파일을 찾을 수 있는 기능이 있습니다.
 ![파일검색1](/images/blogmaking/filesearch1.png)
 우리가 수정해야할 `_page.scss`에 도달했습니다. 이제, 브랜치를 만들어서, 파일을 수정하고, 이를 커밋해 봅시다.
@@ -120,32 +120,32 @@ $ git checkout -b 1-sidebar
 
 ```scss
 .page__main {
-    height: 100%;
-    color: $text-color;
-    .col-aside {
-        display: none;
-        & > aside {
-            position: absolute;
-            width: map-get($layout, aside-width);
-            @include overflow(hidden);
-        }
+  height: 100%;
+  color: $text-color;
+  .col-aside {
+    display: none;
+    & > aside {
+      position: absolute;
+      width: map-get($layout, aside-width);
+      @include overflow(hidden);
     }
+  }
 }
 중략... .has-aside {
-    .col-aside {
-        position: relative;
-        display: block;
-        width: map-get($layout, aside-width);
-        & > aside {
-            &.fixed {
-                position: fixed;
-                -webkit-font-smoothing: subpixel-antialiased;
-            }
-        }
-        @include media-breakpoint-down(lg) {
-            display: none;
-        }
+  .col-aside {
+    position: relative;
+    display: block;
+    width: map-get($layout, aside-width);
+    & > aside {
+      &.fixed {
+        position: fixed;
+        -webkit-font-smoothing: subpixel-antialiased;
+      }
     }
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
 }
 ```
 
@@ -178,7 +178,7 @@ Github pages에서 출력한 오류를 읽어보니, `main.scss`에서 문제가
 ```
 
 `map-get`으로 받아온 값을 음수로 처리해서 사용하겠다는건데, 얘를 `-map-get($layout, sidebar-width),0);`으로 만들어 버린겁니다. 세상에.
-빠르게 구글링을 해서 나온 결과인 <https://www.geeksforgeeks.org/sass-negative-variable-value/>를 참조해서,
+빠르게 구글링을 해서 나온 결과인 [https://www.geeksforgeeks.org/sass-negative-variable-value/](https://www.geeksforgeeks.org/sass-negative-variable-value/)를 참조해서,
 
 ```scss
 @include transform(translate(-(map-get($layout, sidebar-width), 0)));
@@ -196,7 +196,7 @@ Github pages에서 출력한 오류를 읽어보니, `main.scss`에서 문제가
 {:.info}
 
 그래서 github pages blog 관련 검색어로 구글링을 해봤더니. `github pages`공식 문서에, `github-pages`라는 `gem`을 설치해서, 로컬에서 테스트를 할 수 있다고 하는 내용을 확인했습니다.
-<https://github.com/github/pages-gem> 공식 리포지토리의 `readme.md`를 참고해서 설치를 진행해 봤습니다.
+[https://github.com/github/pages-gem](https://github.com/github/pages-gem) 공식 리포지토리의 `readme.md`를 참고해서 설치를 진행해 봤습니다.
 
 `Gemfile`을 실행해서 읽어보니,
 
@@ -262,14 +262,14 @@ $ git push
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="4" max="16" style="width:80%"></progress><p>4/16</p></div>
 <hr>
 
 # ② : `Katex` 수식 렌더링 되도록 하기.
 
 `Katex`를 `Jekyll`로 만든 페이지에서 표시하고 싶어하는 사람이, 구글에 검색을 해보니 많아서 정말로 다행이었습니다.
-<https://stackoverflow.com/questions/50890702/running-katex-on-jekyll>
+[https://stackoverflow.com/questions/50890702/running-katex-on-jekyll](https://stackoverflow.com/questions/50890702/running-katex-on-jekyll)
 나와있는대로 작업을 쭉 진행해 봅시다.
 
 우선 issue를 해결할땐, 그 해당 issue 만을 해결하는 `branch`를 작성해서 작업했었죠?
@@ -284,29 +284,29 @@ $ git checkout -b 2-katex
 생략....
 <!--KaTeX-->
 <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
-    crossorigin="anonymous"
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
+  crossorigin="anonymous"
 />
 <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+  integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+  crossorigin="anonymous"
 ></script>
 <script
-    defer
-    src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
-    crossorigin="anonymous"
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+  integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
+  crossorigin="anonymous"
 ></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-            // ...options...
-        });
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      // ...options...
     });
+  });
 </script>
 ```
 
@@ -314,20 +314,20 @@ $ git checkout -b 2-katex
 
 ```yml
 kramdown:
-    math_engine: katex
+  math_engine: katex
 ```
 
 이렇게 한 후에, 글의 머릿말에 `katex: True`를 추가하면 katex렌더링이 된다고 합니다.
 
 그렇게 추가한 후 `bundle exec jekyll serve`를 실행해서 테스트 해봅시다.
 
-<i class="fas fa-exclamation-triangle"></i> <strong>주의</strong><br>
+<i class="fas fa-exclamation-triangle"></i> <strong>주의</strong><br/>
 몇몇 기술적 문제 때문에 `_config.yml`을 수정하는 사항은 기존에 실행했던 `jekyll serve`에 반영되지 않습니다. 즉, `jekyll serve`명령을 틀고 작업을 하면서 실시간으로 결과물을 확인하고 있었다면, `ctrl+c`를 눌러 명령을 잠시 껐다가, 다시 켜서 확인해 보셔야 제대로 적용된 모습을 볼 수 있습니다.
 {:.warning}
 
 딱히 에러는 생기지 않지만, 예전처럼 똑같이, `Katex`가 렌더링 되지 않았습니다. 그리고, 여전히 이상한 표도 보이고 개판 5분전인건 똑같군요.
 
-이 문제는, `velog`에서는 `$`한개로만 감싸는 인라인 수식 기능을 지원하지만, 이 코드는 그렇지 않기 때문입니다. (참고자료 : <https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex>)
+이 문제는, `velog`에서는 `$`한개로만 감싸는 인라인 수식 기능을 지원하지만, 이 코드는 그렇지 않기 때문입니다. (참고자료 : [https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex](https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex))
 
 이 문제는 `$` 한개로 둘러싸인 인라인 수식을 `$`두개로 둘러싸인것으로 변경해서 해결하면 됩니다. 표가 나오는 문제는, `|`기호가 `markdown`내에서 표를 만드는데 쓰여서 생기는 문제고, `\|`이런식으로 escape 해주면 되는데, 이 작업은 정규식을 활용해서 저는 진행했습니다.
 
@@ -374,7 +374,7 @@ vscode의 치환 기능중에 정규식 사용 옵션을 이용해서 수식을 
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="5" max="16" style="width:80%"></progress><p>5/16</p></div>
 <hr>
 
@@ -396,19 +396,19 @@ vscode의 치환 기능중에 정규식 사용 옵션을 이용해서 수식을 
 
 ```scss
 @import "skins/{{ site.text_skin | default: site.data.variables.default.text_skin }}",
-    // "skins/chocolate",
-    // "skins/dark",
-    // "skins/default",
-    // "skins/forest",
-    // "skins/ocean",
-    // "skins/orange",
-    "skins/highlight/{{ site.highlight_theme | default: site.data.variables.default.highlight_theme }}",
-    // "skins/highlight/tomorrow",
-    // "skins/highlight/tomorrow-night",
-    // "skins/highlight/tomorrow-night-eighties",
-    // "skins/highlight/tomorrow-night-blue",
-    // "skins/highlight/tomorrow-night-bright",
-    중략..... "common/reset", 하략.....;
+  // "skins/chocolate",
+  // "skins/dark",
+  // "skins/default",
+  // "skins/forest",
+  // "skins/ocean",
+  // "skins/orange",
+  "skins/highlight/{{ site.highlight_theme | default: site.data.variables.default.highlight_theme }}",
+  // "skins/highlight/tomorrow",
+  // "skins/highlight/tomorrow-night",
+  // "skins/highlight/tomorrow-night-eighties",
+  // "skins/highlight/tomorrow-night-blue",
+  // "skins/highlight/tomorrow-night-bright",
+  중략..... "common/reset", 하략.....;
 ```
 
 {% endraw %}
@@ -418,12 +418,12 @@ vscode의 치환 기능중에 정규식 사용 옵션을 이용해서 수식을 
 ```scss
 pre,
 code {
-    font-family: map-get($base, font-family-code);
+  font-family: map-get($base, font-family-code);
 }
 
 code {
-    font-size: map-get($base, font-size-xs);
-    line-height: map-get($base, line-height-sm);
+  font-size: map-get($base, font-size-xs);
+  line-height: map-get($base, line-height-sm);
 }
 ```
 
@@ -432,31 +432,31 @@ code {
 
 ```scss
 $base: (
-    font-family: (
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
-        Arial,
-        sans-serif,
-    ),
-    font-family-code: (
-        Menlo,
-        Monaco,
-        Consolas,
-        Andale Mono,
-        lucida console,
-        Courier New,
-        monospace,
-    ),
-    font-size-root: 16px,
-    font-size-root-sm: 14px,
-    font-size-xl: 1.5rem,
-    font-size-lg: 1.25rem,
-    font-size: 1rem,
-    font-size-sm: 0.85rem,
-    font-size-xs: 0.7rem,
-    하략....,
+  font-family: (
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+  ),
+  font-family-code: (
+    Menlo,
+    Monaco,
+    Consolas,
+    Andale Mono,
+    lucida console,
+    Courier New,
+    monospace,
+  ),
+  font-size-root: 16px,
+  font-size-root-sm: 14px,
+  font-size-xl: 1.5rem,
+  font-size-lg: 1.25rem,
+  font-size: 1rem,
+  font-size-sm: 0.85rem,
+  font-size-xs: 0.7rem,
+  하략....,
 );
 ```
 
@@ -467,12 +467,12 @@ $base: (
 ```scss
 pre,
 code {
-    font-family: map-get($base, font-family-code);
+  font-family: map-get($base, font-family-code);
 }
 
 code {
-    font-size: map-get($base, font-size);
-    line-height: map-get($base, line-height-sm);
+  font-size: map-get($base, font-size);
+  line-height: map-get($base, line-height-sm);
 }
 ```
 
@@ -481,27 +481,27 @@ code {
 ```scss
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Nanum+Gothic+Coding&display=swap");
 $base: (
-    font-family: (
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
-        Arial,
-        sans-serif,
-    ),
-    font-family-code: (
-        "IBM Plex Mono",
-        "Nanum Gothic Coding",
-        monospace,
-    ),
-    font-size-root: 16px,
-    font-size-root-sm: 14px,
-    font-size-xl: 1.5rem,
-    font-size-lg: 1.25rem,
-    font-size: 1rem,
-    font-size-sm: 0.85rem,
-    font-size-xs: 0.7rem,
-    하략...,
+  font-family: (
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+  ),
+  font-family-code: (
+    "IBM Plex Mono",
+    "Nanum Gothic Coding",
+    monospace,
+  ),
+  font-size-root: 16px,
+  font-size-root-sm: 14px,
+  font-size-xl: 1.5rem,
+  font-size-lg: 1.25rem,
+  font-size: 1rem,
+  font-size-sm: 0.85rem,
+  font-size-xs: 0.7rem,
+  하략...,
 );
 ```
 
@@ -569,7 +569,7 @@ $ git commit -m "changed code area's background. closes #3"
   - [ ] 광고 달기
   - [ ] 개인 도메인 연결하기
 
-<div style="display:flex; justify-content:center"><strong>진행률</strong><br></div>
+<div style="display:flex; justify-content:center"><strong>진행률</strong><br/></div>
 <div style="display:flex; flex-direction:column; align-items:center;"><progress value="6" max="16" style="width:80%"></progress><p>6/16</p></div>
 <hr>
 
