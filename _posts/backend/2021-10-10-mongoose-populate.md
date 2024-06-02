@@ -3,7 +3,7 @@ title: ObjectId를 실제 데이터로! populate() 에 대해서 알아보자!
 layout: post
 subtitle: RDBMS의 JOIN 문과 유사한, mongoose의 .populate()에 대해서 짚고 넘어갑시다.
 image: /images/thumbnails/mongoose.png
-category: environment
+category: backend
 ---
 
 이번 글에서는, [저번 mongoose 글](/mongoose-basics)에서 나중에 다루겠다는, mongoose의 `populate`기능에 대해서 알아보겠습니다.

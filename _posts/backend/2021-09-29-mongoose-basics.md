@@ -3,7 +3,7 @@ title: Mongoose 기초 정리
 layout: post
 subtitle: node.js에서 MongoDB를 쓸 때 도움을 주는 친구인 Mongoose에 대하여
 image: /images/thumbnails/mongoose.png
-category: environment
+category: backend
 ---
 
 # 개요
