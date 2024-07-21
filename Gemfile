@@ -8,3 +8,5 @@ gem "jekyll-paginate"
 gem "jekyll-paginate-content"
 gem "json"
 gem "jekyll-gist"
+
+gem "webrick", "~> 1.8"
