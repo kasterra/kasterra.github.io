@@ -23,7 +23,7 @@ React Native 버전이 변화함에 따라서, 특정 prop이 작동을 안하�
 간단히 위의 내용을 요약하자면 다음과 같습니다.
 
 1. node_module 폴더를 헤집으면서 필요한 수정을 가한다.
-2. `npx patch-create react-native-snap-carousel` 을 하여 패치 파일을 만든다.
+2. `npx patch-package react-native-snap-carousel` 을 하여 패치 파일을 만든다.
 3. ```json
    "scripts": {
      "postinstall": "patch-package"
