@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 기술면접을 계기로 다시 본 클로저
-subtitle: '기초'를 아는 신입이 되어야겠지?
+subtitle: 기초를 아는 신입이 되어야겠지?
 category: javascript
 image: /images/thumbnails/JS.png
 ---
