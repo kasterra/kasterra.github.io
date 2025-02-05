@@ -302,7 +302,7 @@ funcs.forEach(f => console.log(f()); // 0 1 2
 
 ## 같은 함수로 만들어진 클로저도 독립된 메모리 공간을 가진다
 
-https://ko.javascript.info/task/closure-variable-access
+참고자료 : <https://ko.javascript.info/task/closure-variable-access>
 
 어찌보면 당연한 이야기입니다. 힙 메모리 공간 어딘가에 참조를 저장한다는 점에서, C언어의 `malloc`과 비슷한 느낌이라는 느낌이 없잖아 들잖아요.
 
