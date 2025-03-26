@@ -1,30 +1,31 @@
 <header class="bar-header">
-    <a id="menu" role="button">
-        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+  <a id="menu" role="button">
+    <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+  </a>
+  <h1 class="logo">
+    <a href="{{ site.baseurl }}/">
+      {% if site.use_logo %} {% include logo.html %} {% else %} {{ site.name }}
+      <span class="version">{{ site.version }}</span>
+      {% endif %}
     </a>
-    <h1 class="logo">
-        <a href="{{ site.baseurl }}/">
-            {% if site.use_logo %}
-                {% include logo.html %}
-            {% else %}
-                {{ site.name }} <span class="version">{{ site.version }}</span>
-            {% endif %}
-        </a>
-        <a href="https://hits.seeyoufarm.com">
+    <!-- <a href="https://hits.seeyoufarm.com">
             <img style="width:50%;"src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{site.url}}%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%EC%A1%B0%ED%9A%8C%EC%88%98&edge_flat=false"/>
-        </a> 
-    </h1>
-    <a id="search" class="dosearch" role="button">
-        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
-    </a>
-    {% if site.show_get_theme_btn %}
-        <a href="https://github.com/thiagorossener/jekflix-template" class="get-theme" role="button">
-            Get this theme!
-        </a>
-    {% endif %}
+        </a>  -->
+  </h1>
+  <a id="search" class="dosearch" role="button">
+    <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+  </a>
+  {% if site.show_get_theme_btn %}
+  <a
+    href="https://github.com/thiagorossener/jekflix-template"
+    class="get-theme"
+    role="button"
+  >
+    Get this theme!
+  </a>
+  {% endif %}
 </header>
 
 <div id="mask" class="overlay"></div>
 
-{% include menu.html %}
-{% include search.html %}
+{% include menu.html %} {% include search.html %}
