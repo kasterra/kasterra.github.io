@@ -25,9 +25,13 @@
         </p>
         <h1 class="post-title">{{ page.title }}</h1>
         <p class="post-subtitle">{{ page.subtitle }}</p>
-        <!-- <a href="https://hits.seeyoufarm.com">
-                    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=%EC%A1%B0%ED%9A%8C%EC%88%98&edge_flat=false"/>
-                </a>  -->
+        <a
+          href="https://hits.sh/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"
+        >
+          <img
+            src="https://hits.sh/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}.svg"
+          />
+        </a>
         {% if page.image and paginator.activated == nil %}
         <img src="{{ page.image }}" alt="Featured image" class="post-cover" />
         {% endif %} {% include pagination-post.html progressBar=true %} {%
