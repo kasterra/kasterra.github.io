@@ -40,7 +40,7 @@ two_columns_layout: false
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kasterra.github.io" # the base hostname & protocol for your site
 google_analytics: "G-6GMTGS1140"
-language: "ko"
+language: "ko-kr"
 categories_folder: category
 sent_message_url: "/contact/message-sent/"
 
