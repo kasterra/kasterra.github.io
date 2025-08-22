@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 커리어 점프를 위한 PS 풀이 블로그 분관 개설 - 1
+title: 커리어 점프를 위한 PS 풀이 블로그 분관 개설 - 08.20
 subtitle: 여러 가지 의미가 담긴 프로젝트의 시작
 category: short essay
 image: /images/thumbnails/shortEssay.jpg
