@@ -149,6 +149,8 @@ async function ServerComponent() {
 }
 ```
 
+관련해서 제가 이전에 [바텀시트 구현](https://kasterra.github.io/user-friendly-bottomsheet-implement/)한 것에서도 children 타입을 별개로 지정했던 섹션에서도 다루고 있으니, 관심 있으시다면 확인을 해보시면 좋을 것 같습니다.
+
 # 번외: 서버 컴포넌트에서 클라이언트 전용 라이브러리 사용하기
 
 서버 컴포넌트는 브라우저 환경이 아니므로 DOM 조작이나 이벤트 핸들링 같은 클라이언트 전용 라이브러리는 직접 사용할 수 없습니다. 예를 들어 `framer-motion`, `react-hook-form`, `zustand` 등이 있습니다.
@@ -158,6 +160,7 @@ async function ServerComponent() {
 예시:
 
 ```tsx
+"use client";
 import { motion } from "framer-motion";
 
 export default function AnimatedBox() {
