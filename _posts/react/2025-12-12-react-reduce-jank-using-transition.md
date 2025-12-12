@@ -165,6 +165,10 @@ const { filtered, dailyRevenue, dailyVisitors, channelShares } = useMemo(
 
 핵심 전략은 다음과 같습니다.
 
+- `useDeferredValue`로 “입력값은 즉시 반영하되, 무거운 계산에는 지연된 값”을 사용합니다.
+- `useTransition`으로 무거운 파생 계산을 **낮은 우선순위 전환**으로 감싸 입력 반응을 우선합니다.
+- `lazy` + `Suspense`로 차트/테이블을 코드 스플리팅하고 로딩 피드백을 제공합니다.
+
 > **주의:** `startTransition`은 무거운 계산을 **비동기 작업으로 바꾸지 않습니다.**
 > 이 예제에서 `computeDashboard`는 여전히 **메인 스레드에서 동기 실행**되며, 특히 아래처럼 `startTransition(() => { ... })` 콜백 안에서 계산을 수행하면 그 계산 자체는 그대로 **긴 동기 작업(long task)** 이 될 수 있습니다.
 >
@@ -174,10 +178,6 @@ const { filtered, dailyRevenue, dailyVisitors, channelShares } = useMemo(
 > 2. `startTransition`으로 **결과 상태 업데이트/커밋을 낮은 우선순위**로 처리해, 입력(urgent)과 결과 갱신(non-urgent)을 분리해 UX가 무너지지 않게 하기 때문입니다.
 >
 > 계산 자체를 메인 스레드 밖으로 보내거나(진짜 CPU 병목 해결), 더 쪼개서 처리하려면 Web Worker/청크 처리 같은 **별도 접근**이 필요합니다.
-
-- `useDeferredValue`로 “입력값은 즉시 반영하되, 무거운 계산에는 지연된 값”을 사용합니다.
-- `useTransition`으로 무거운 파생 계산을 **낮은 우선순위 전환**으로 감싸 입력 반응을 우선합니다.
-- `lazy` + `Suspense`로 차트/테이블을 코드 스플리팅하고 로딩 피드백을 제공합니다.
 
 ```tsx
 // src/screens/NonLane.tsx (핵심 발췌)
